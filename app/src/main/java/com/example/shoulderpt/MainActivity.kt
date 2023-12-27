@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import com.example.shoulderpt.ui.theme.ShoulderPTTheme
 
 import com.example.shoulderpt.SecondPage
+import com.example.shoulderpt.Pendulum
 
 
 class MainActivity : ComponentActivity() {
@@ -47,10 +48,29 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyApp() {
+
     val navController = rememberNavController()
+
     NavHost(navController = navController, startDestination = "landingPage") {
         composable("landingPage") { LandingPage(navController) }
         composable("secondPage") { SecondPage(navController) }
+        composable("pendulum") { Pendulum(navController) }
+        composable("posteriorStretching") { PosteriorStretching(navController) }
+        composable("upTheBackStretch"){ (navController) }
+        composable("overHeadStretch") { (navController) }
+        composable("shoulderFlexor") { (navController) }
+        composable("shoulderRotation") { (navController) }
+        composable("wallClimberSide") { (navController) }
+        composable("wallClimberFront") { (navController) }
+        composable("shoulderBladeSqueeze") { (navController) }
+        composable("armReachFront") { (navController) }
+        composable("armReachSide") { (navController) }
+        composable("armRaiseSide") { (navController) }
+        composable("shoulderFlexorAndExtensor") { (navController) }
+        composable("wallPushUp") { (navController) }
+        composable("scapularRetraction") { (navController) }
+        composable("internalRotator") { Pendulum(navController) }
+        composable("externalRotator") { Pendulum(navController) }
     }
 }
 

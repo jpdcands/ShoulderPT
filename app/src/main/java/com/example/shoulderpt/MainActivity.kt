@@ -67,7 +67,7 @@ fun MyApp() {
                     text = "Shoulder/Rotator",
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
-                        .padding(top = 40.dp),
+                        .padding(top = 100.dp),
                     fontWeight = FontWeight.Bold,
                     style = TextStyle(
                         fontSize = 44.sp

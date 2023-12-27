@@ -56,21 +56,21 @@ fun MyApp() {
         composable("secondPage") { SecondPage(navController) }
         composable("pendulum") { Pendulum(navController) }
         composable("posteriorStretching") { PosteriorStretching(navController) }
-        composable("upTheBackStretch"){ (navController) }
-        composable("overHeadStretch") { (navController) }
-        composable("shoulderFlexor") { (navController) }
-        composable("shoulderRotation") { (navController) }
-        composable("wallClimberSide") { (navController) }
-        composable("wallClimberFront") { (navController) }
-        composable("shoulderBladeSqueeze") { (navController) }
-        composable("armReachFront") { (navController) }
-        composable("armReachSide") { (navController) }
-        composable("armRaiseSide") { (navController) }
-        composable("shoulderFlexorAndExtensor") { (navController) }
-        composable("wallPushUp") { (navController) }
-        composable("scapularRetraction") { (navController) }
-        composable("internalRotator") { Pendulum(navController) }
-        composable("externalRotator") { Pendulum(navController) }
+        composable("upTheBackStretch"){ UpTheBackStretch(navController) }
+        composable("overHeadStretch") { OverHeadStretch(navController) }
+        composable("shoulderFlexor") { ShoulderFlexor(navController) }
+        composable("shoulderRotation") { ShoulderRotation(navController) }
+        composable("wallClimberSide") { WallClimberSide(navController) }
+        composable("wallClimberFront") { WallClimberFront(navController) }
+        composable("shoulderBladeSqueeze") { ShoulderBladeSqueeze(navController) }
+        composable("armReachFront") { ArmReachFront(navController) }
+        composable("armReachSide") { ArmReachSide(navController) }
+        composable("armRaiseSide") { ArmRaiseSide(navController) }
+        composable("shoulderFlexorAndExtensor") { ShoulderFlexorAndExtensor(navController) }
+        composable("wallPushUp") { WallPushUp(navController) }
+        composable("scapularRetraction") { ScapularRetraction(navController) }
+        composable("internalRotator") { InternalRotator(navController) }
+        composable("externalRotator") { ExternalRotator(navController) }
     }
 }
 

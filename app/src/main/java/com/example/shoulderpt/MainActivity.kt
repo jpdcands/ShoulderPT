@@ -33,6 +33,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.compose.ui.unit.sp
 import com.example.shoulderpt.ui.theme.ShoulderPTTheme
 
+import com.example.shoulderpt.SecondPage
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -100,20 +102,6 @@ fun MyApp() {
         }
     }
 }
-
-@Composable
-fun SecondPage(navController: NavController) {
-    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Text("This is the Second Page", fontSize = 24.sp)
-            Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = { navController.navigate("landingPage") }) {
-                Text("Back to Landing Page", fontSize = 20.sp)
-            }
-        }
-    }
-}
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {

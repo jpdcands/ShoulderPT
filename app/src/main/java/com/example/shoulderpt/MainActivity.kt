@@ -55,7 +55,7 @@ fun MyApp() {
         composable("landingPage") { LandingPage(navController) }
         composable("secondPage") { SecondPage(navController) }
         composable("pendulum") { Pendulum(navController) }
-        composable("posteriorStretching") { PosteriorStretching(navController) }
+     /*   composable("posteriorStretching") { PosteriorStretching(navController) }
         composable("upTheBackStretch"){ UpTheBackStretch(navController) }
         composable("overHeadStretch") { OverHeadStretch(navController) }
         composable("shoulderFlexor") { ShoulderFlexor(navController) }
@@ -70,7 +70,7 @@ fun MyApp() {
         composable("wallPushUp") { WallPushUp(navController) }
         composable("scapularRetraction") { ScapularRetraction(navController) }
         composable("internalRotator") { InternalRotator(navController) }
-        composable("externalRotator") { ExternalRotator(navController) }
+        composable("externalRotator") { ExternalRotator(navController) } */
     }
 }
 

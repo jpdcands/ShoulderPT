@@ -26,15 +26,15 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun Pendulum(navController: NavController) {
 
-  //  val navController = rememberNavController()
-
     var selectedOption by remember { mutableStateOf("Option 1") }
     val options = listOf("Option 1", "Option 2", "Option 3")
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
         Text("Title", style = MaterialTheme.typography.displayLarge)
         Spacer(modifier = Modifier.height(16.dp))
@@ -58,7 +58,7 @@ fun Pendulum(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { /* Handle button click */ }) {
-            Text("Button 1")
+            Text("To Next Exercise")
         }
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = { navController.navigate("secondPage") }) {

@@ -27,40 +27,54 @@ import androidx.navigation.compose.rememberNavController
 fun Pendulum(navController: NavController) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Option 1", "Option 2", "Option 3")
+    val options = listOf("Set 1", "Set 2", "Set 3", "Set 4")
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
     ) {
-        Text("Title", style = MaterialTheme.typography.displayLarge)
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(20.dp)) // Increased height
+        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Spacer(modifier = Modifier.height(4.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
-            contentDescription = "Pendulum"
+            contentDescription = "Pendulum",
+            modifier = Modifier.size(250.dp)
         )
-        Spacer(modifier = Modifier.height(16.dp))
-        Text("Some text goes here...")
-        Spacer(modifier = Modifier.height(16.dp))
-
-        options.forEach { option ->
-            Row(verticalAlignment = Alignment.CenterVertically) {
+        val text = """
+            1. This exercise does not use the arm muscles - use your legs and hips to create movement.
+            2. Swing arm back and forth like a pendulum then use your hips to make circles
+            3. Do this exercise for 5 minutes 4 times a day.
+            4. As pain decreases, try bending over further.
+            """.trimIndent()
+        val modifier = Modifier.fillMaxWidth().padding(16.dp)
+        val style = MaterialTheme.typography.bodyLarge
+        Text(text = text, modifier = modifier, style = style)
+        Spacer(modifier = Modifier.height(32.dp))
+        // Horizontal arrangement of radio buttons
+        Row(
+            horizontalArrangement = Arrangement.Center, // Center the radio buttons in the Row
+            modifier = Modifier.fillMaxWidth() // Fill the width of the parent
+        ) {
+            options.forEach { option ->
                 RadioButton(
                     selected = option == selectedOption,
                     onClick = { selectedOption = option }
                 )
                 Text(text = option)
+                Spacer(modifier = Modifier.width(8.dp)) // Space between each radio button group
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(32.dp))
+
         Button(onClick = { /* Handle button click */ }) {
             Text("To Next Exercise")
         }
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { navController.navigate("secondPage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }

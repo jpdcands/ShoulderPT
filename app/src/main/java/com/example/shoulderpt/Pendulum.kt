@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.compose.rememberNavController
 
 @Composable
@@ -38,7 +39,7 @@ fun Pendulum(navController: NavController) {
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
         Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
-        Spacer(modifier = Modifier.height(4.dp))
+        Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
             contentDescription = "Pendulum",
@@ -50,42 +51,47 @@ fun Pendulum(navController: NavController) {
             3. Do this exercise for 5 minutes 4 times a day.
             4. As pain decreases, try bending over further.
             """.trimIndent()
-        val modifier = Modifier.fillMaxWidth().padding(16.dp)
+        val modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
         val style = MaterialTheme.typography.bodyLarge
         Text(text = text, modifier = modifier, style = style)
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(16.dp))
         // Horizontal arrangement of radio buttons
         Row(
             horizontalArrangement = Arrangement.Center, // Center the radio buttons in the Row
             modifier = Modifier.fillMaxWidth() // Fill the width of the parent
         ) {
             options.forEach { option ->
-                RadioButton(
-                    selected = option == selectedOption,
-                    onClick = { selectedOption = option }
-                )
-                Text(text = option)
-                Spacer(modifier = Modifier.width(8.dp)) // Space between each radio button group
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(text = option, textAlign = TextAlign.Center)
+                    RadioButton(
+                        selected = option == selectedOption,
+                        onClick = { selectedOption = option }
+                    )
+                }
+                Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
             }
         }
+                     Spacer(modifier = Modifier.height(24.dp))
+                    // First button
+                    Button(onClick = { /* Handle button click */ }) {
+                        Text("To Next Exercise", fontSize = 20.sp)
+                    }
 
-        Spacer(modifier = Modifier.height(32.dp))
+                    Spacer(modifier = Modifier.height(30.dp))
 
-        Button(onClick = { /* Handle button click */ }) {
-            Text("To Next Exercise")
-        }
-        Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { navController.navigate("secondPage") }) {
-            Text("Back to Exercise List", fontSize = 20.sp)
-        }
+                    // Second button
+                    Button(onClick = { navController.navigate("secondPage") }) {
+                        Text("Back to Exercise List", fontSize = 20.sp)
+                    }
+                }
+            }
+    @Preview(showBackground = true)
+    @Composable
+    fun DefaultPreview() {
+
+        val navController = rememberNavController()
+
+        Pendulum(navController)
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-
-    val navController = rememberNavController()
-
-    Pendulum(navController)
-}

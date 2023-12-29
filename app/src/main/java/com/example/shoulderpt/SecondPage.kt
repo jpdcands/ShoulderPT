@@ -59,6 +59,11 @@ fun NamesLazyColumn(navController: NavController) {
         "External Rotator"
     )
 
+    val exerciseToRouteMap = mapOf(
+        "Pendulum" to "Pendulum",
+        "Posterior Stretching" to "Posterior Stretching"
+    )
+
     LazyColumn(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -66,8 +71,8 @@ fun NamesLazyColumn(navController: NavController) {
         items(items = exerciseList) { name ->
             Button(
                 onClick = {
-                    if (name == "Pendulum") {
-                        navController.navigate("Pendulum")
+                    exerciseToRouteMap[name]?.let { route ->
+                        navController.navigate(route)
                     }
                 },
                 modifier = Modifier

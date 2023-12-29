@@ -75,7 +75,7 @@ fun Pendulum(navController: NavController) {
         }
                      Spacer(modifier = Modifier.height(24.dp))
                     // First button
-                    Button(onClick = { /* Handle button click */ }) {
+                    Button(onClick = { navController.navigate("posteriorStretching") }) {
                         Text("To Next Exercise", fontSize = 20.sp)
                     }
 

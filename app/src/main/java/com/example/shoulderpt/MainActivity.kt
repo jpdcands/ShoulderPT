@@ -35,6 +35,7 @@ import com.example.shoulderpt.ui.theme.ShoulderPTTheme
 
 import com.example.shoulderpt.SecondPage
 import com.example.shoulderpt.Pendulum
+import com.example.shoulderpt.PosteriorStretching
 
 
 class MainActivity : ComponentActivity() {
@@ -55,8 +56,8 @@ fun MyApp() {
         composable("landingPage") { LandingPage(navController) }
         composable("secondPage") { SecondPage(navController) }
         composable("pendulum") { Pendulum(navController) }
-     /*   composable("posteriorStretching") { PosteriorStretching(navController) }
-        composable("upTheBackStretch"){ UpTheBackStretch(navController) }
+        composable("posteriorStretching") { PosteriorStretching(navController) }
+    /*    composable("upTheBackStretch"){ UpTheBackStretch(navController) }
         composable("overHeadStretch") { OverHeadStretch(navController) }
         composable("shoulderFlexor") { ShoulderFlexor(navController) }
         composable("shoulderRotation") { ShoulderRotation(navController) }

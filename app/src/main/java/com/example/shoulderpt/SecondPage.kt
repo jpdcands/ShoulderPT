@@ -49,7 +49,7 @@ fun NamesLazyColumn(navController: NavController) {
         "Wall Climber-Side",
         "Wall Climber-Front",
         "Shoulder Blade Squeeze",
-        "Arm Reach- Front",
+        "Arm Reach-Front",
         "Arm Reach-Side",
         "Arm Raise-Side",
         "Shoulder Flexor and Extensor",
@@ -61,7 +61,22 @@ fun NamesLazyColumn(navController: NavController) {
 
     val exerciseToRouteMap = mapOf(
         "Pendulum" to "Pendulum",
-        "Posterior Stretching" to "Posterior Stretching"
+        "Posterior Stretching" to "posteriorStretching",
+        "Up-the-back Stretch" to "upTheBackStretch",
+        "Overhead Stretch" to "overheadStretch",
+        "Shoulder Flexor" to "shoulderFlexor",
+        "Shoulder Rotation" to "shoulderRotation",
+        "Wall Climber-Side" to "wallClimberSide",
+        "Wall Climber-Front" to "wallClimberFront",
+        "Shoulder Blade Squeeze" to "shoulderBladeSqueeze",
+        "Arm Reach-Front" to "armReachFront",
+        "Arm Reach-Side" to "armReachSide",
+        "Arm Raise-Side" to "armRaiseSide",
+        "Shoulder Flexor and Extensor" to "shoulderFlexorAndExtensor",
+        "Wall Push-Up" to "wallPushUp",
+        "Scapular Retraction" to "scapularRetraction",
+        "Internal Rotator" to "internalRotator",
+        "External Rotator" to "externalRotator"
     )
 
     LazyColumn(

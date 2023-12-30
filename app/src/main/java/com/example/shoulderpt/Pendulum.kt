@@ -89,7 +89,7 @@ fun Pendulum(navController: NavController) {
             }
     @Preview(showBackground = true)
     @Composable
-    fun DefaultPreview() {
+    fun DefaultPreviewPendulum() {
 
         val navController = rememberNavController()
 

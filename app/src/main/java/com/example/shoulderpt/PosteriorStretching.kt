@@ -1,6 +1,5 @@
 package com.example.shoulderpt
 
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -76,7 +75,7 @@ fun PosteriorStretching(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { /* Handle button click */ }) {
+        Button(onClick = {  navController.navigate("upTheBackStretch") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

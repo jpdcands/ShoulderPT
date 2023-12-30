@@ -1,6 +1,5 @@
 package com.example.shoulderpt
 
-package com.example.shoulderpt
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,7 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Pendulum(navController: NavController) {
+fun ArmRaiseSide(navController: NavController) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
     val options = listOf("Set 1", "Set 2", "Set 3", "Set 4")
@@ -89,11 +88,12 @@ fun Pendulum(navController: NavController) {
         }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun DefaultPreviewArmRaiseSide() {
 
     val navController = rememberNavController()
 
-    Pendulum(navController)
+    ArmRaiseSide(navController)
 }

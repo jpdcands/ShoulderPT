@@ -58,7 +58,7 @@ fun MyApp() {
         composable("pendulum") { Pendulum(navController) }
         composable("posteriorStretching") { PosteriorStretching(navController) }
         composable("upTheBackStretch"){ UpTheBackStretch(navController) }
-        composable("overHeadStretch") { OverHeadStretch(navController) }
+        composable("overheadStretch") { OverheadStretch(navController) }
         composable("shoulderFlexor") { ShoulderFlexor(navController) }
         composable("shoulderRotation") { ShoulderRotation(navController) }
         composable("wallClimberSide") { WallClimberSide(navController) }

@@ -39,7 +39,7 @@ fun ShoulderRotation(navController: NavController) {
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Text("Shoulder Rotation", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
@@ -76,7 +76,7 @@ fun ShoulderRotation(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("shoulderRotation") }) {
+        Button(onClick = { navController.navigate("wallClimberSide") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

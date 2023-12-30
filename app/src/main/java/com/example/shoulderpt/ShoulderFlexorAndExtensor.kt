@@ -39,7 +39,7 @@ fun ShoulderFlexorAndExtensor(navController: NavController) {
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Text("Shoulder Flexor & Extensor", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
@@ -76,7 +76,7 @@ fun ShoulderFlexorAndExtensor(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("") }) {
+        Button(onClick = { navController.navigate("wallPushUp") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

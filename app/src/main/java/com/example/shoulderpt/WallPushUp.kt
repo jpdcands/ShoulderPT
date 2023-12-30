@@ -39,7 +39,7 @@ fun WallPushUp(navController: NavController) {
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Text("Wall Push Up", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
@@ -76,7 +76,7 @@ fun WallPushUp(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("wallPushUp") }) {
+        Button(onClick = { navController.navigate("scapularRetraction") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

@@ -38,7 +38,7 @@ fun ArmReachFront(navController: NavController) {
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Text("Arm Reach Front", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
@@ -75,7 +75,7 @@ fun ArmReachFront(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("armReachFront") }) {
+        Button(onClick = { navController.navigate("armReachSide") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

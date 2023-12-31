@@ -42,7 +42,7 @@ fun WallPushUp(navController: NavController) {
         Text("Wall Push Up", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
+            painter = painterResource(id = R.drawable.wallpushup), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )

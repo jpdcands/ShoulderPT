@@ -42,8 +42,8 @@ fun OverheadStretch(navController: NavController) {
         Text("Overhead Stretch", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
-            contentDescription = "Pendulum",
+            painter = painterResource(id = R.drawable.overtheheadstretch), // Replace with your image resource
+            contentDescription = "Over the Head Stretch",
             modifier = Modifier.size(250.dp)
         )
         val text = """

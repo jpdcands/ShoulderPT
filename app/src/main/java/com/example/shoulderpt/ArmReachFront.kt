@@ -41,8 +41,8 @@ fun ArmReachFront(navController: NavController) {
         Text("Arm Reach Front", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
-            contentDescription = "Pendulum",
+            painter = painterResource(id = R.drawable.scapularretraction), // Replace with your image resource
+            contentDescription = "Scapular Exercise: Arm Reach",
             modifier = Modifier.size(250.dp)
         )
         val text = """

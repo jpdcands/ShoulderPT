@@ -42,8 +42,8 @@ fun ExternalRotator(navController: NavController) {
         Text("External Rotator", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
-            contentDescription = "Pendulum",
+            painter = painterResource(id = R.drawable.externalrotation), // Replace with your image resource
+            contentDescription = "External Rotation",
             modifier = Modifier.size(250.dp)
         )
         val text = """

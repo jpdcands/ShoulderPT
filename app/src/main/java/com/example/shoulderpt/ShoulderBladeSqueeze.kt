@@ -42,7 +42,8 @@ fun ShoulderBladeSqueeze(navController: NavController) {
         Text("Shoulder Blade Squeeze", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
+            painter = painterResource(id = R.drawable.shoulderbladesqueeze
+            ), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )

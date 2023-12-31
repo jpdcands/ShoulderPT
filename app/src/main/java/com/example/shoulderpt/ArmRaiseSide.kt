@@ -42,8 +42,8 @@ fun ArmRaiseSide(navController: NavController) {
         Text("Arm Raise Side", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
-            contentDescription = "Pendulum",
+            painter = painterResource(id = R.drawable.armraiseside), // Replace with your image resource
+            contentDescription = "Arm Raise Side",
             modifier = Modifier.size(250.dp)
         )
         val text = """

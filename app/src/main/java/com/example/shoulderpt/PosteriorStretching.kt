@@ -46,10 +46,10 @@ fun PosteriorStretching(navController: NavController) {
             modifier = Modifier.size(250.dp)
         )
         val text = """
-            1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-            2. Swing arm back and forth like a pendulum then use your hips to make circles
-            3. Do this exercise for 5 minutes 4 times a day.
-            4. As pain decreases, try bending over further.
+            1. Hold the elbow of the affected arm with your other hand.
+            2. Use your hand to gently pull your arm up and across your body.
+            3. Hold for 15 - 30 seconds.
+            4. Repeat 2 to 4 times.
             """.trimIndent()
         val modifier = Modifier
             .fillMaxWidth()

@@ -29,7 +29,7 @@ import androidx.navigation.compose.rememberNavController
 fun ShoulderFlexor(navController: NavController) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Set 1", "Set 2", "Set 3", "Set 4")
+    val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
         modifier = Modifier

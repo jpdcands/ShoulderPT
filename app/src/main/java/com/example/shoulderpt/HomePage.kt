@@ -24,13 +24,13 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun SecondPage(navController: NavController) {
+fun HomePage(navController: NavController) {
     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = { navController.navigate("landingPage") }) {
-                Text("Back to Landing Page", fontSize = 20.sp)
+                Text("Back to Welcome Page", fontSize = 20.sp)
             }
             Spacer(modifier = Modifier.height(16.dp))
             NamesLazyColumn(navController)
@@ -112,7 +112,7 @@ fun NamesLazyColumn(navController: NavController) {
 @Composable
 fun DefaultPreviewSecondPage() {
     val navController = rememberNavController()
-    SecondPage(navController)
+    HomePage(navController)
     NamesLazyColumn(navController)
 }
 

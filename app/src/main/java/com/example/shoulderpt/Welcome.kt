@@ -25,10 +25,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+
 import androidx.compose.ui.unit.sp
 import com.example.shoulderpt.ui.theme.ShoulderPTTheme
 
-import com.example.shoulderpt.SecondPage
+import com.example.shoulderpt.HomePage
 import com.example.shoulderpt.Pendulum
 import com.example.shoulderpt.PosteriorStretching
 
@@ -47,9 +48,9 @@ fun MyApp() {
 
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "landingPage") {
+   NavHost(navController = navController, startDestination = "landingPage") {
         composable("landingPage") { LandingPage(navController) }
-        composable("secondPage") { SecondPage(navController) }
+        composable("homePage") { HomePage(navController) }
         composable("pendulum") { Pendulum(navController) }
         composable("posteriorStretching") { PosteriorStretching(navController) }
         composable("upTheBackStretch"){ UpTheBackStretch(navController) }
@@ -109,7 +110,7 @@ fun MyApp() {
        Box(
            contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
               Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                  Button(onClick = { navController.navigate("secondPage") }) {
+                  Button(onClick = { navController.navigate("homePage") }) {
                        Text("Begin Exercises", fontSize = 20.sp)
                         }
                     }

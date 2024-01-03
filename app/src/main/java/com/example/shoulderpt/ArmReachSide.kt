@@ -83,7 +83,7 @@ fun ArmReachSide(navController: NavController) {
         Spacer(modifier = Modifier.height(30.dp))
 
         // Second button
-        Button(onClick = { navController.navigate("secondPage") }) {
+        Button(onClick = { navController.navigate("homePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
     }

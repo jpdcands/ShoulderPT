@@ -83,7 +83,7 @@ fun ScapularRetraction(navController: NavController) {
         Spacer(modifier = Modifier.height(30.dp))
 
         // Second button
-        Button(onClick = { navController.navigate("homePage") }) {
+        Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
     }

@@ -29,7 +29,7 @@ import androidx.navigation.compose.rememberNavController
 fun ArmRaiseSide(navController: NavController) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Set 1", "Set 2", "Set 3", "Set 4")
+    val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
         modifier = Modifier
@@ -76,14 +76,14 @@ fun ArmRaiseSide(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("shoulderFlexorAndExtensor") }) {
+        Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
         Spacer(modifier = Modifier.height(30.dp))
 
         // Second button
-        Button(onClick = { navController.navigate("homePage") }) {
+        Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
     }

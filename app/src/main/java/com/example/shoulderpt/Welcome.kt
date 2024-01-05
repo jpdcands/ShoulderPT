@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.ui.tooling.preview.Preview
 import android.os.Bundle
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.Column
@@ -13,9 +14,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -43,36 +46,58 @@ class Welcome  : ComponentActivity() {
     }
 }
 
+sealed class Screen(val route: String) {
+    object Welcome : Screen("Welcome")
+    object HomePage : Screen("HomePage")
+    object Pendulum : Screen("Pendulum")
+    object PosteriorStretching : Screen("PosteriorStretching")
+    object UpTheBackStretch : Screen("UpTheBackStretch")
+    object OverheadStretch : Screen("OverheadStretch")
+    object ShoulderFlexor : Screen("ShoulderFlexor")
+    object ShoulderRotation : Screen("ShoulderRotation")
+    object WallClimberSide : Screen("WallClimberSide")
+    object WallClimberFront : Screen("WallClimberFront")
+    object ShoulderBladeSqueeze : Screen("ShoulderBladeSqueeze")
+    object ArmReachFront : Screen("ArmReachFront")
+    object ArmReachSide : Screen("ArmReachSide")
+    object ShoulderFlexorAndExtensor : Screen("ShoulderFlexorAndExtensor")
+    object ArmRaiseSide : Screen("ArmRaiseSide")
+    object WallPushUp : Screen("WallPushUp")
+    object ScapularRetraction : Screen("ScapularRetraction")
+    object InternalRotator : Screen("InternalRotator")
+    object ExternalRotator : Screen("ExternalRotator")
+
+    }
+
 @Composable
 fun MyApp() {
-
     val navController = rememberNavController()
 
-   NavHost(navController = navController, startDestination = "landingPage") {
-        composable("landingPage") { LandingPage(navController) }
-        composable("homePage") { HomePage(navController) }
-        composable("pendulum") { Pendulum(navController) }
-        composable("posteriorStretching") { PosteriorStretching(navController) }
-        composable("upTheBackStretch"){ UpTheBackStretch(navController) }
-        composable("overheadStretch") { OverheadStretch(navController) }
-        composable("shoulderFlexor") { ShoulderFlexor(navController) }
-        composable("shoulderRotation") { ShoulderRotation(navController) }
-        composable("wallClimberSide") { WallClimberSide(navController) }
-        composable("wallClimberFront") { WallClimberFront(navController) }
-        composable("shoulderBladeSqueeze") { ShoulderBladeSqueeze(navController) }
-        composable("armReachFront") { ArmReachFront(navController) }
-        composable("armReachSide") { ArmReachSide(navController) }
-        composable("armRaiseSide") { ArmRaiseSide(navController) }
-        composable("shoulderFlexorAndExtensor") { ShoulderFlexorAndExtensor(navController) }
-        composable("wallPushUp") { WallPushUp(navController) }
-        composable("scapularRetraction") { ScapularRetraction(navController) }
-        composable("internalRotator") { InternalRotator(navController) }
-        composable("externalRotator") { ExternalRotator(navController) }
+    NavHost(navController = navController, startDestination = Screen.Welcome.route) {
+        composable(Screen.Welcome.route) { Welcome(navController) }
+        composable(Screen.HomePage.route) { HomePage(navController) }
+        composable(Screen.Pendulum.route) { Pendulum(navController) }
+        composable(Screen.UpTheBackStretch.route) { UpTheBackStretch(navController) }
+        composable(Screen.ArmRaiseSide.route) { ArmRaiseSide(navController) }
+        composable(Screen.ShoulderFlexor.route) { ShoulderFlexor(navController) }
+        composable(Screen.OverheadStretch.route) { OverheadStretch(navController) }
+        composable(Screen.PosteriorStretching.route) { PosteriorStretching(navController) }
+        composable(Screen.ShoulderRotation.route) { ShoulderRotation(navController) }
+        composable(Screen.WallClimberSide.route) { WallClimberSide(navController) }
+        composable(Screen.WallClimberFront.route) { WallClimberFront(navController) }
+        composable(Screen.ShoulderBladeSqueeze.route) { ShoulderBladeSqueeze(navController) }
+        composable(Screen.ArmReachFront.route) { ArmReachFront(navController) }
+        composable(Screen.ArmReachSide.route) { ArmReachSide(navController) }
+        composable(Screen.ShoulderFlexorAndExtensor.route) { ShoulderFlexorAndExtensor(navController) }
+        composable(Screen.WallPushUp.route) { WallPushUp(navController) }
+        composable(Screen.ScapularRetraction.route) { ScapularRetraction(navController) }
+        composable(Screen.InternalRotator.route) { InternalRotator(navController) }
+        composable(Screen.ExternalRotator.route) { ExternalRotator(navController) }
     }
 }
 
 @Composable
- fun LandingPage(navController: NavController) {
+ fun Welcome(navController: NavController) {
     Column(modifier = Modifier.fillMaxSize()) {
         Box(
             contentAlignment = Alignment.Center, // Aligns the content to the center
@@ -103,14 +128,20 @@ fun MyApp() {
                         textAlign = TextAlign.Center // Centers the text within its composable
                     )
                 )
-                Spacer(modifier = Modifier.height(100.dp))
+                Spacer(modifier = Modifier.height(60.dp))
                 // LazyColumn for the list of exercises
              //   NamesLazyColumn(navController)
+
+                Image(
+                    painter = painterResource(id = R.drawable.shoulderpain), // Replace with your image resource
+                    contentDescription = "Over the Head Stretch",
+                    modifier = Modifier.size(250.dp)
+                )
 
        Box(
            contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
               Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                  Button(onClick = { navController.navigate("homePage") }) {
+                  Button(onClick = { navController.navigate("HomePage") }) {
                        Text("Begin Exercises", fontSize = 20.sp)
                         }
                     }
@@ -119,13 +150,13 @@ fun MyApp() {
         }
     }
 }
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
     // Create a dummy NavController for preview purposes
     val navController = rememberNavController()
 
     ShoulderPTTheme {
-        LandingPage(navController)
+        Welcome(navController)
     }
 }

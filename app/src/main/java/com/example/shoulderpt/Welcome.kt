@@ -111,7 +111,7 @@ fun MyApp() {
                     text = "Shoulder/Rotator",
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
-                        .padding(top = 100.dp),
+                        .padding(top = 5.dp),
                     fontWeight = FontWeight.Bold,
                     style = TextStyle(
                         fontSize = 44.sp
@@ -128,18 +128,23 @@ fun MyApp() {
                         textAlign = TextAlign.Center // Centers the text within its composable
                     )
                 )
-                Spacer(modifier = Modifier.height(60.dp))
+           //     Spacer(modifier = Modifier.height(10.dp))
                 // LazyColumn for the list of exercises
              //   NamesLazyColumn(navController)
 
                 Image(
-                    painter = painterResource(id = R.drawable.shoulderpain), // Replace with your image resource
+                    painter = painterResource(id = R.drawable.shoulderimage), // Replace with your image resource
                     contentDescription = "Over the Head Stretch",
-                    modifier = Modifier.size(250.dp)
+                    modifier = Modifier.size(300.dp, 400.dp)
                 )
+           //     Spacer(modifier = Modifier.height(20.dp)) // Adjust the height as needed
 
-       Box(
-           contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 20.dp)
+                ) {
               Column(horizontalAlignment = Alignment.CenterHorizontally) {
                   Button(onClick = { navController.navigate("HomePage") }) {
                        Text("Begin Exercises", fontSize = 20.sp)

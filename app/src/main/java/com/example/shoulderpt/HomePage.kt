@@ -29,7 +29,7 @@ fun HomePage(navController: NavController) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
             Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = { navController.navigate("WelcomePage") }) {
+            Button(onClick = { navController.navigate("Welcome") }) {
                 Text("Back to Welcome Page", fontSize = 20.sp)
             }
             Spacer(modifier = Modifier.height(16.dp))

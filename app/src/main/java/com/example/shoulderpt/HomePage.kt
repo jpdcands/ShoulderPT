@@ -110,7 +110,7 @@ fun NamesLazyColumn(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreviewSecondPage() {
+fun DefaultPreviewHomePage() {
     val navController = rememberNavController()
     HomePage(navController)
     NamesLazyColumn(navController)

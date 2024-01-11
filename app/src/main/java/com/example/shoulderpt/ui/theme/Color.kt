@@ -1,14 +1,8 @@
 package com.example.shoulderpt.ui.theme
 
 import androidx.compose.ui.graphics.Color
-
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
-
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.darkColorScheme
 
 
 val md_theme_light_primary = Color(0xFF4556B3)
@@ -93,3 +87,20 @@ val dark_CustomColor2 = Color(0xFFD8B9FF)
 val dark_onCustomColor2 = Color(0xFF401B6E)
 val dark_CustomColor2Container = Color(0xFF573486)
 val dark_onCustomColor2Container = Color(0xFFEDDCFF)
+
+val LightColorScheme = lightColorScheme(
+    primary = md_theme_light_primary,
+    onPrimary = md_theme_light_onPrimary,
+    secondary = md_theme_light_secondary,
+    onSecondary = md_theme_light_onSecondary,
+    background = md_theme_light_background
+    // Include other colors like tertiary, error, background, etc.
+)
+
+val DarkColorScheme = darkColorScheme(
+    primary = md_theme_dark_primary,
+    onPrimary = md_theme_dark_onPrimary,
+    secondary = md_theme_dark_secondary,
+    onSecondary = md_theme_dark_onSecondary,
+    // Include other colors for the dark theme
+)

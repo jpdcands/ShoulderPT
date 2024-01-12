@@ -91,25 +91,25 @@ fun NamesLazyColumn(navController: NavController) {
     @Composable
     fun getImageResourceForExercise(exerciseName: String): Int {
         return when (exerciseName) {
-            "Pendulum" -> R.drawable.pendulum.jpg // Replace with actual image name
-            "Posterior Stretching" -> R.drawable.posteriorstretching.jpg // Replace with actual image name
-            "Up-the-back Stretch" -> R.drawable.upthebackstretch.jpg // Replace with actual image name
-            "Overhead Stretch" -> R.drawable.overtheheadstretch.jpg// Replace with actual image name
-            "Shoulder Flexor" -> R.drawable.shoulderflexordown.jpg // Replace with actual image name
-            "Shoulder Rotation" -> R.drawable.shoulderrotation.jpg // Replace with actual image name
-            "Wall Climber-Side" -> R.drawable.wallclimberside.jpg // Replace with actual image name
-            "Wall Climber-Front" -> R.drawable.wallclimberfront.jpg // Replace with actual image name
-            "Shoulder Blade Squeeze" -> R.drawable.shoulderbladesqueeze.jpg // Replace with actual image name
+            "Pendulum" -> R.drawable.pendulum // Replace with actual image name
+            "Posterior Stretching" -> R.drawable.posteriorstretching // Replace with actual image name
+            "Up-the-back Stretch" -> R.drawable.upthebackstretch // Replace with actual image name
+            "Overhead Stretch" -> R.drawable.overtheheadstretch// Replace with actual image name
+            "Shoulder Flexor" -> R.drawable.shoulderflexordown // Replace with actual image name
+            "Shoulder Rotation" -> R.drawable.shoulderrotation // Replace with actual image name
+            "Wall Climber-Side" -> R.drawable.wallclimberside // Replace with actual image name
+            "Wall Climber-Front" -> R.drawable.wallclimberfront // Replace with actual image name
+            "Shoulder Blade Squeeze" -> R.drawable.shoulderbladesqueeze // Replace with actual image name
         //    "Arm Reach-Front" -> R.drawable.exercise2_image // Replace with actual image name
         //    "Arm Reach-Side" -> R.drawable._image // Replace with actual image name
-            "Arm Raise-Side" -> R.drawable.armraiseside.jpg // Replace with actual image name
-            "Shoulder Flexor and Extensor" -> R.drawable.shoulderflexorandextensor.jpg // Replace with actual image name
-            "Wall Push-Up" -> R.drawable.wallpushup.jpg // Replace with actual image name
-            "Scapular Retraction-1" -> R.drawable.scapularretraction.jpg // Replace with actual image name
-            "Scapular Retraction-2" -> R.drawable.scapularretractieontwo.jpg // Replace with actual image name
-            "Internal Rotator" -> R.drawable.internalrotation.jpg // Replace with actual image name
-            "External Rotator" -> R.drawable.externalrotation.jpg // Replace with actual image name
-            else -> R.drawable.shoulderpain.jpg // Default image if no match is found
+            "Arm Raise-Side" -> R.drawable.armraiseside // Replace with actual image name
+            "Shoulder Flexor and Extensor" -> R.drawable.shoulderflexorandextensor // Replace with actual image name
+            "Wall Push-Up" -> R.drawable.wallpushup // Replace with actual image name
+            "Scapular Retraction-1" -> R.drawable.scapularretraction // Replace with actual image name
+            "Scapular Retraction-2" -> R.drawable.scapularretractieontwo // Replace with actual image name
+            "Internal Rotator" -> R.drawable.internalrotation // Replace with actual image name
+            "External Rotator" -> R.drawable.externalrotation // Replace with actual image name
+            else -> R.drawable.shoulderpain // Default image if no match is found
         }
     }
 
@@ -134,9 +134,7 @@ fun NamesLazyColumn(navController: NavController) {
             // You can add Text under the image if needed
             Text(
                 text = name,
-                modifier = Modifier
-                    .align(Alignment.CenterHorizontally)
-                    .padding(top = 8.dp),
+                modifier = Modifier.padding(top = 8.dp),
                 textAlign = TextAlign.Center
             )
         }

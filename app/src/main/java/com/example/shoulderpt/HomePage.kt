@@ -81,7 +81,7 @@ fun NamesLazyColumn(navController: NavController) {
         "External Rotator" to "externalRotator"
     )
 
-    LazyColumn(
+    LazyVerticalGrid(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

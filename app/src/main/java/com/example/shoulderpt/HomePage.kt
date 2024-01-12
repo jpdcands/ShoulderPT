@@ -1,6 +1,8 @@
 package com.example.shoulderpt
 
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -85,34 +88,59 @@ fun NamesLazyColumn(navController: NavController) {
         "External Rotator" to "externalRotator"
     )
 
+    @Composable
+    fun getImageResourceForExercise(exerciseName: String): Int {
+        return when (exerciseName) {
+            "Pendulum" -> R.drawable.e1_image // Replace with actual image name
+            "Posterior Stretching" -> R.drawable.exercise2_image // Replace with actual image name
+            "Up-the-back Stretch" -> R.drawable.exercise2_image // Replace with actual image name
+            "Overhead Stretch" -> R.drawable.ov_image // Replace with actual image name
+            "Shoulder Flexor" -> R.drawable.exercise2_image // Replace with actual image name
+            "Shoulder Rotation" -> R.drawable.exercise2e // Replace with actual image name
+            "Wall Climber-Side" -> R.drawable.exercise2_image // Replace with actual image name
+            "Wall Climber-Front" -> R.drawable.exercise2_image // Replace with actual image name
+            "Shoulder Blade Squeeze" -> R.drawable.exercise2_image // Replace with actual image name
+            "Arm Reach-Front" -> R.drawable.exercise2_image // Replace with actual image name
+            "Arm Reach-Side" -> R.drawable._image // Replace with actual image name
+            "Arm Raise-Side" -> R.drawable.armraiseside_image // Replace with actual image name
+            "Shoulder Flexor and Extensor" -> R.drawable.exercise2_image // Replace with actual image name
+            "Wall Push-Up" -> R.drawable.exercise2_image // Replace with actual image name
+            "Scapular Retraction" -> R.drawable.exercise2_image // Replace with actual image name
+            "Internal Rotator" -> R.drawable.internalrotation_image // Replace with actual image name
+            "External Rotator" -> R.drawable.externalrotation_image // Replace with actual image name
+            else -> R.drawable.default_image // Default image if no match is found
+        }
+    }
+
     LazyVerticalGrid(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(vertical = 16.dp),
         columns = GridCells.Fixed(2)
     ) {
         items(items = exerciseList) { name ->
-            Button(
-                onClick = {
-                    exerciseToRouteMap[name]?.let { route ->
-                        navController.navigate(route)
-                    }
-                },
+            val imageResource = getImageResourceForExercise(name)
+            Image(
+                painter = painterResource(id = imageResource),
+                contentDescription = name,
                 modifier = Modifier
-                    .padding(12.dp) // Adjust padding as needed
-            ) {
-                Text(
-                    text = name,
-                    modifier = Modifier.padding(8.dp),
-                    style = TextStyle(
-                        fontSize = 24.sp
-                    ),
-                    textAlign = TextAlign.Center
-                )
-            }
+                    .padding(12.dp)
+                    .clickable {
+                        exerciseToRouteMap[name]?.let { route ->
+                            navController.navigate(route)
+                        }
+                    }
+            )
+            // You can add Text under the image if needed
+            Text(
+                text = name,
+                modifier = Modifier
+                    .align(Alignment.CenterHorizontally)
+                    .padding(top = 8.dp),
+                textAlign = TextAlign.Center
+            )
         }
     }
 }
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewHomePage() {

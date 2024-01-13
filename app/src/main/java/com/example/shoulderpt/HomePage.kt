@@ -1,7 +1,9 @@
 package com.example.shoulderpt
 
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,16 +13,21 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
@@ -100,8 +107,8 @@ fun NamesLazyColumn(navController: NavController) {
             "Wall Climber-Side" -> R.drawable.wallclimberside // Replace with actual image name
             "Wall Climber-Front" -> R.drawable.wallclimberfront // Replace with actual image name
             "Shoulder Blade Squeeze" -> R.drawable.shoulderbladesqueeze // Replace with actual image name
-        //    "Arm Reach-Front" -> R.drawable.exercise2_image // Replace with actual image name
-        //    "Arm Reach-Side" -> R.drawable._image // Replace with actual image name
+            //    "Arm Reach-Front" -> R.drawable.exercise2_image // Replace with actual image name
+            //    "Arm Reach-Side" -> R.drawable._image // Replace with actual image name
             "Arm Raise-Side" -> R.drawable.armraiseside // Replace with actual image name
             "Shoulder Flexor and Extensor" -> R.drawable.shoulderflexorandextensor // Replace with actual image name
             "Wall Push-Up" -> R.drawable.wallpushup // Replace with actual image name
@@ -120,26 +127,31 @@ fun NamesLazyColumn(navController: NavController) {
     ) {
         items(items = exerciseList) { name ->
             val imageResource = getImageResourceForExercise(name)
-            Image(
-                painter = painterResource(id = imageResource),
-                contentDescription = name,
+            Card(
+                shape = RoundedCornerShape(4.dp), // Defines the shape of the Card
+                border = BorderStroke(2.dp, Color.Black),
+              //  elevation = 8.dp,
                 modifier = Modifier
                     .padding(12.dp)
+                    .size(150.dp)
                     .clickable {
                         exerciseToRouteMap[name]?.let { route ->
                             navController.navigate(route)
                         }
-                    }
-            )
-            // You can add Text under the image if needed
-            Text(
-                text = name,
-                modifier = Modifier.padding(top = 8.dp),
-                textAlign = TextAlign.Center
-            )
+                    },
+            ) {
+                Image(
+                    painter = painterResource(id = imageResource),
+                    contentDescription = name,
+                    modifier = Modifier
+                        .fillMaxSize() // Fill the Card
+                        .clip(RoundedCornerShape(4.dp)) // Clip the Image
+                )
+            }
         }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewHomePage() {

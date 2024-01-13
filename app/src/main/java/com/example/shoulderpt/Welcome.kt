@@ -156,7 +156,7 @@ fun Welcome(navController: NavController) {
                     //   NamesLazyColumn(navController)
 
                     Image(
-                        painter = painterResource(id = R.drawable.shoulderimage), // Replace with your image resource
+                        painter = painterResource(id = R.drawable.shoulderpain), // Replace with your image resource
                         modifier = Modifier
                             .size(300.dp, 300.dp)
                             .clip(RoundedCornerShape(26.dp)),

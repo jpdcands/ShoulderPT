@@ -48,9 +48,6 @@ import com.example.shoulderpt.PosteriorStretching
 class Welcome : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /*setContent {
-            MyApp()
-        } */
         setContent {
             ShoulderPTTheme {
                 Surface(

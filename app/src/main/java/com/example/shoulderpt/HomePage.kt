@@ -132,9 +132,8 @@ fun NamesLazyColumn(navController: NavController) {
             Card(
                 shape = RoundedCornerShape(4.dp), // Defines the shape of the Card
                 border = BorderStroke(2.dp, Color.Black),
-              //  elevation = 8.dp,
                 modifier = Modifier
-                    .padding(12.dp)
+                    .padding(10.dp)
                     .size(150.dp)
                     .clickable {
                         exerciseToRouteMap[name]?.let { route ->

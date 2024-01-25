@@ -140,8 +140,9 @@ fun NamesLazyColumn(navController: NavController) {
                             navController.navigate(route)
                         }
                     },
-                elevation = CardDefaults.cardElevation (
-                    defaultElevation = 10.dp)
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 10.dp
+                )
             ) {
                 Image(
                     painter = painterResource(id = imageResource),

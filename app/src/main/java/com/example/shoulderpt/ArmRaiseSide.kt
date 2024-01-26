@@ -40,24 +40,58 @@ fun ArmRaiseSide(navController: NavController) {
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
         Text("Arm Raise Side", style = MaterialTheme.typography.headlineLarge)
-        Spacer(modifier = Modifier.height(2.dp))
-        Image(
-            painter = painterResource(id = R.drawable.armraiseside), // Replace with your image resource
-            contentDescription = "Arm Raise Side",
-            modifier = Modifier.size(250.dp)
-        )
-        val text = """
+
+        ImageSection(navController)
+    }
+}
+@Composable
+fun ImageSection(navController: NavController) {
+    Spacer(modifier = Modifier.height(2.dp))
+    Image(
+        painter = painterResource(id = R.drawable.armraiseside), // Replace with your image resource
+        contentDescription = "Arm Raise Side",
+        modifier = Modifier.size(250.dp)
+    )
+    ExerciseDescription(navController)
+}
+
+@Composable
+fun ExerciseDescription(navController: NavController) {
+
+    val text = """
             1. This exercise does not use the arm muscles - use your legs and hips to create movement.
             2. Swing arm back and forth like a pendulum then use your hips to make circles
             3. Do this exercise for 5 minutes 4 times a day.
             4. As pain decreases, try bending over further.
             """.trimIndent()
-        val modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp)
-        val style = MaterialTheme.typography.bodyLarge
-        Text(text = text, modifier = modifier, style = style)
-        Spacer(modifier = Modifier.height(16.dp))
+    val modifier = Modifier
+        .fillMaxWidth()
+        .padding(16.dp)
+    val style = MaterialTheme.typography.bodyLarge
+    Text(text = text, modifier = modifier, style = style)
+    Spacer(modifier = Modifier.height(16.dp))
+
+    // Define the options for RadioButtonSelection
+    val options = listOf("Option 1", "Option 2", "Option 3")
+    var selectedOption by remember { mutableStateOf(options.first()) } // Initialize with the first option
+
+    // Call RadioButtonSelection with all required parameters
+    RadioButtonSelection(
+        options = options,
+        selectedOption = selectedOption,
+        onOptionSelected = { selectedOption = it },
+        navController = navController
+    )
+}
+
+@Composable
+fun RadioButtonSelection(
+    options: List<String>,
+    selectedOption: String,
+    onOptionSelected: (String) -> Unit,
+    navController: NavController
+) {
+    Column {
         // Horizontal arrangement of radio buttons
         Row(
             horizontalArrangement = Arrangement.Center, // Center the radio buttons in the Row
@@ -68,26 +102,32 @@ fun ArmRaiseSide(navController: NavController) {
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
                         selected = option == selectedOption,
-                        onClick = { selectedOption = option }
+                        onClick = { onOptionSelected(option) }
                     )
                 }
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
             }
         }
-        Spacer(modifier = Modifier.height(24.dp))
-        // First button
-        Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
-            Text("To Next Exercise", fontSize = 20.sp)
-        }
-
-        Spacer(modifier = Modifier.height(30.dp))
-
-        // Second button
-        Button(onClick = { navController.navigate("HomePage") }) {
-            Text("Back to Exercise List", fontSize = 20.sp)
-        }
+        NavigationButtons(navController)
     }
 }
+
+@Composable
+fun NavigationButtons(navController: NavController) {
+    Spacer(modifier = Modifier.height(24.dp))
+    // First button
+    Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
+        Text("To Next Exercise", fontSize = 20.sp)
+    }
+
+    Spacer(modifier = Modifier.height(30.dp))
+
+    // Second button
+    Button(onClick = { navController.navigate("HomePage") }) {
+        Text("Back to Exercise List", fontSize = 20.sp)
+    }
+}
+
 
 @Preview(showBackground = true)
 @Composable

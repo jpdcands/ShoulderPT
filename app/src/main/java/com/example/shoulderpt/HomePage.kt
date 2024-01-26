@@ -104,7 +104,7 @@ fun NamesLazyColumn(navController: NavController) {
             "Posterior Stretching" -> R.drawable.posteriorstretching // Replace with actual image name
             "Up-the-back Stretch" -> R.drawable.upthebackstretch // Replace with actual image name
             "Overhead Stretch" -> R.drawable.overtheheadstretch// Replace with actual image name
-            "Shoulder Flexor" -> R.drawable.shoulderflexordown // Replace with actual image name
+            "Shoulder Flexor" -> R.drawable.armraiseside // Replace with actual image name
             "Shoulder Rotation" -> R.drawable.shoulderrotation // Replace with actual image name
             "Wall Climber-Side" -> R.drawable.wallclimberside // Replace with actual image name
             "Wall Climber-Front" -> R.drawable.wallclimberfront // Replace with actual image name

@@ -20,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,7 +35,7 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun ArmRaiseSide(navController: NavController) {
 
-    var selectedOption by remember { mutableStateOf("Option 1") }
+    var selectedOption by rememberSaveable { mutableStateOf("0") }
     val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
@@ -78,8 +79,8 @@ fun ExerciseDescription(navController: NavController) {
     Spacer(modifier = Modifier.height(16.dp))
 
     // Define the options for RadioButtonSelection
-    val options = listOf("Option 1", "Option 2", "Option 3")
-    var selectedOption by remember { mutableStateOf(options.first()) } // Initialize with the first option
+    val options = listOf("Select Set", "Set 1", "Set 2", "Set 3")
+    var selectedOption by rememberSaveable { mutableStateOf(options.first()) } // Initialize with the first option
 
     // Call RadioButtonSelection with all required parameters
     RadioButtonSelection(
@@ -120,17 +121,22 @@ fun RadioButtonSelection(
 
 @Composable
 fun NavigationButtons(navController: NavController) {
-    Spacer(modifier = Modifier.height(24.dp))
-    // First button
-    Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
-        Text("To Next Exercise", fontSize = 20.sp)
-    }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Spacer(modifier = Modifier.height(24.dp))
+        // First button
+        Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
+            Text("To Next Exercise", fontSize = 20.sp)
+        }
 
-    Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
-    // Second button
-    Button(onClick = { navController.navigate("HomePage") }) {
-        Text("Back to Exercise List", fontSize = 20.sp)
+        // Second button
+        Button(onClick = { navController.navigate("HomePage") }) {
+            Text("Back to Exercise List", fontSize = 20.sp)
+        }
     }
 }
 

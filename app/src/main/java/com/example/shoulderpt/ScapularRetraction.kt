@@ -42,7 +42,7 @@ fun ScapularRetraction(navController: NavController) {
         Text("Scapular Retraction", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.scapularretraction), // Replace with your image resource
+            painter = painterResource(id = R.drawable.scapularretractiontwo), // Replace with your image resource
             contentDescription = "Scapular Retraction",
             modifier = Modifier.size(250.dp)
         )

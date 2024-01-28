@@ -29,13 +29,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
-@Composable
+@Composable()
 fun ArmRaiseSide(navController: NavController) {
+//  Get the ViewModel
+    val exerciseViewModel: ExerciseViewModel = viewModel()
 
-    var selectedOption by rememberSaveable { mutableStateOf("0") }
+//    Use the ViewModel's state
+    var selectedOption by remember { exerciseViewModel.selectedOption }
+
+//    var selectedOption by rememberSaveable { mutableStateOf("0") }
     val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
@@ -48,22 +54,25 @@ fun ArmRaiseSide(navController: NavController) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
         Text("Arm Raise Side", style = MaterialTheme.typography.headlineLarge)
 
-        ImageSection(navController)
+        ImageSection(navController, exerciseViewModel)
+        ExerciseDescription(navController, exerciseViewModel)
+        NavigationButtons(navController)
     }
 }
 @Composable
-fun ImageSection(navController: NavController) {
+fun ImageSection(navController: NavController, exerciseViewModel: ExerciseViewModel) {
     Spacer(modifier = Modifier.height(2.dp))
     Image(
+
         painter = painterResource(id = R.drawable.armraiseside), // Replace with your image resource
         contentDescription = "Arm Raise Side",
         modifier = Modifier.size(250.dp)
     )
-    ExerciseDescription(navController)
+ //   ExerciseDescription(navController, ExerciseViewModel())
 }
 
 @Composable
-fun ExerciseDescription(navController: NavController) {
+fun ExerciseDescription(navController: NavController, exerciseViewModel: ExerciseViewModel) {
 
     val text = """
             1. This exercise does not use the arm muscles - use your legs and hips to create movement.
@@ -87,7 +96,8 @@ fun ExerciseDescription(navController: NavController) {
         options = options,
         selectedOption = selectedOption,
         onOptionSelected = { selectedOption = it },
-        navController = navController
+        navController = navController,
+        exerciseViewModel = exerciseViewModel
     )
 }
 
@@ -96,8 +106,10 @@ fun RadioButtonSelection(
     options: List<String>,
     selectedOption: String,
     onOptionSelected: (String) -> Unit,
-    navController: NavController
+    navController: NavController,
+    exerciseViewModel: ExerciseViewModel // Add ViewModel as a parameter
 ) {
+//    Update the elected option using ViewModel
     Column {
         // Horizontal arrangement of radio buttons
         Row(
@@ -109,17 +121,19 @@ fun RadioButtonSelection(
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
                         selected = option == selectedOption,
-                        onClick = { onOptionSelected(option) }
+                        onClick = {
+                            onOptionSelected(option)
+                            exerciseViewModel.updateSelectedOption(option)
+                        }
                     )
+//          Update ViewModel state
                 }
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
             }
         }
-        NavigationButtons(navController)
     }
 }
-
-@Composable
+@Composable()
 fun NavigationButtons(navController: NavController) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -139,7 +153,6 @@ fun NavigationButtons(navController: NavController) {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

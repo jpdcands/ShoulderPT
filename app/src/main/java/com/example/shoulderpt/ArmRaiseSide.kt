@@ -35,11 +35,11 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable()
 fun ArmRaiseSide(navController: NavController) {
-//  Get the ViewModel
     val exerciseViewModel: ExerciseViewModel = viewModel()
+//  Get the ViewModel
 
 //    Use the ViewModel's state
-    var selectedOption by remember { exerciseViewModel.selectedOption }
+    var selectedOption by rememberSaveable { exerciseViewModel.selectedOption }
 
 //    var selectedOption by rememberSaveable { mutableStateOf("0") }
     val options = listOf("Set 1", "Set 2", "Set 3")
@@ -89,14 +89,11 @@ fun ExerciseDescription(navController: NavController, exerciseViewModel: Exercis
 
     // Define the options for RadioButtonSelection
     val options = listOf("Select Set", "Set 1", "Set 2", "Set 3")
-    var selectedOption by rememberSaveable { mutableStateOf(options.first()) } // Initialize with the first option
+    val selectedOption by exerciseViewModel.selectedOption
 
     // Call RadioButtonSelection with all required parameters
     RadioButtonSelection(
-        options = options,
-        selectedOption = selectedOption,
-        onOptionSelected = { selectedOption = it },
-        navController = navController,
+        options = listOf("Select Set", "Set 1", "Set 2", "Set 3"),
         exerciseViewModel = exerciseViewModel
     )
 }
@@ -104,14 +101,12 @@ fun ExerciseDescription(navController: NavController, exerciseViewModel: Exercis
 @Composable
 fun RadioButtonSelection(
     options: List<String>,
-    selectedOption: String,
-    onOptionSelected: (String) -> Unit,
-    navController: NavController,
     exerciseViewModel: ExerciseViewModel // Add ViewModel as a parameter
 ) {
+    val selectedOption = exerciseViewModel.selectedOption.value
+
 //    Update the elected option using ViewModel
     Column {
-        // Horizontal arrangement of radio buttons
         Row(
             horizontalArrangement = Arrangement.Center, // Center the radio buttons in the Row
             modifier = Modifier.fillMaxWidth() // Fill the width of the parent
@@ -121,10 +116,7 @@ fun RadioButtonSelection(
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
                         selected = option == selectedOption,
-                        onClick = {
-                            onOptionSelected(option)
-                            exerciseViewModel.updateSelectedOption(option)
-                        }
+                        onClick = {exerciseViewModel.updateSelectedOption(option) }
                     )
 //          Update ViewModel state
                 }
@@ -159,6 +151,7 @@ fun NavigationButtons(navController: NavController) {
 fun DefaultPreviewArmRaiseSide() {
 
     val navController = rememberNavController()
+    val exerciseViewModel = ExerciseViewModel()
 
     ArmRaiseSide(navController)
 }

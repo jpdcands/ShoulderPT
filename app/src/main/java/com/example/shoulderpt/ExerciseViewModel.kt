@@ -1,13 +1,15 @@
 package com.example.shoulderpt
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 class ExerciseViewModel : ViewModel() {
 //    LiveData to hold the selected option
-    var selectedOption = mutableStateOf("0")
+    var selectedOption = mutableStateOf("")
 
 //    Function to update the selected option
-    fun updateSelectedOption(newOption: String) {
-        selectedOption.value = newOption
+    fun updateSelectedOption(option: String) {
+        selectedOption.value = option
     }
 }

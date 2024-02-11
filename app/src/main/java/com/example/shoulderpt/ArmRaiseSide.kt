@@ -34,12 +34,9 @@ import androidx.navigation.compose.rememberNavController
 @Composable()
 fun ArmRaiseSide(navController: NavController) {
     val exerciseViewModel: ExerciseViewModel = viewModel()
-//  Get the ViewModel
 
-//    Use the ViewModel's state
     var selectedOption by rememberSaveable { exerciseViewModel.selectedOption }
 
-//    var selectedOption by rememberSaveable { mutableStateOf("0") }
     val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(

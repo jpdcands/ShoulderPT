@@ -1,6 +1,5 @@
 package com.example.shoulderpt
 
-
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

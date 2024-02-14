@@ -77,7 +77,7 @@ fun ShoulderBladeSqueeze(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ArmReachFront") }) {
+        Button(onClick = { navController.navigate("ShoulderFlexor") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

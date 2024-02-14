@@ -3,6 +3,7 @@ package com.example.shoulderpt
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -30,6 +31,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -40,6 +42,9 @@ import com.example.shoulderpt.ui.theme.ShoulderPTTheme
 class Welcome : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val viewModel: ExerciseViewModel by viewModels()
+
         setContent {
             ShoulderPTTheme {
                 Surface(
@@ -80,7 +85,6 @@ sealed class Screen(val route: String) {
 fun MyApp() {
     val navController = rememberNavController()
 
-
     NavHost(navController = navController, startDestination = Screen.Welcome.route) {
         composable(Screen.Welcome.route) { Welcome(navController) }
         composable(Screen.HomePage.route) { HomePage(navController) }
@@ -95,7 +99,6 @@ fun MyApp() {
         composable(Screen.WallClimberFront.route) { WallClimberFront(navController) }
         composable(Screen.ShoulderBladeSqueeze.route) { ShoulderBladeSqueeze(navController) }
         composable(Screen.ArmReachFront.route) { ArmReachFront(navController) }
-        composable(Screen.ArmReachSide.route) { ArmReachSide(navController) }
         composable(Screen.ShoulderFlexorAndExtensor.route) { ShoulderFlexorAndExtensor(navController) }
         composable(Screen.WallPushUp.route) { WallPushUp(navController) }
         composable(Screen.ScapularRetraction.route) { ScapularRetraction(navController) }
@@ -176,7 +179,7 @@ fun Welcome(navController: NavController) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun GreetingPreview() {
+fun MyAppPreview() {
     // Create a dummy NavController for preview purposes
     val navController = rememberNavController()
 

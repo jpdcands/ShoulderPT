@@ -76,7 +76,7 @@ fun InternalRotator(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ExternalRotator") }) {
+        Button(onClick = { navController.navigate("OverheadStretch") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

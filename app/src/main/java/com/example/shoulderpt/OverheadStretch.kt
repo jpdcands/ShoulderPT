@@ -76,7 +76,7 @@ fun OverheadStretch(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ShoulderFlexor") }) {
+        Button(onClick = { navController.navigate("Pendulum") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

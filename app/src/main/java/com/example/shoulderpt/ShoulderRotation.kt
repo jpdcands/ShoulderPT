@@ -76,7 +76,7 @@ fun ShoulderRotation(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("WallClimberSide") }) {
+        Button(onClick = { navController.navigate("UpTheBackStretch") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

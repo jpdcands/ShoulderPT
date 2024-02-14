@@ -76,7 +76,7 @@ fun ExternalRotator(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("HomePage") }) {
+        Button(onClick = { navController.navigate("InternalRotator") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

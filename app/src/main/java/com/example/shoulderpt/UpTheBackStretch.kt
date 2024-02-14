@@ -42,7 +42,7 @@ fun UpTheBackStretch(navController: NavController) {
         Text("Up-the-Back Stretch", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.upthebackstretch), // Replace with your image resource
+            painter = painterResource(id = R.drawable.wallpushup), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )
@@ -76,7 +76,7 @@ fun UpTheBackStretch(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("OverheadStretch") }) {
+        Button(onClick = { navController.navigate("WallClimberFront") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

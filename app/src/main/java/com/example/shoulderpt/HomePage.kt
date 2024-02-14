@@ -50,7 +50,6 @@ fun HomePage(navController: NavController) {
 
 @Composable
 fun NamesLazyColumn(navController: NavController) {
-
     val exerciseList = listOf(
         "Pendulum",
         "Posterior Stretching",
@@ -152,6 +151,5 @@ fun NamesLazyColumn(navController: NavController) {
 fun DefaultPreviewHomePage() {
     val navController = rememberNavController()
     HomePage(navController)
-    NamesLazyColumn(navController)
 }
 

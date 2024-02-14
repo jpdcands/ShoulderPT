@@ -41,7 +41,7 @@ fun ArmReachFront(navController: NavController) {
         Text("Arm Reach Front", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.scapularretraction), // Replace with your image resource
+            painter = painterResource(id = R.drawable.armreachfront), // Replace with your image resource
             contentDescription = "Scapular Exercise: Arm Reach",
             modifier = Modifier.size(250.dp)
         )
@@ -75,7 +75,7 @@ fun ArmReachFront(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ArmReachSide") }) {
+        Button(onClick = { navController.navigate("ExternalRotator") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

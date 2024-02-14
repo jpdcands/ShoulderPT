@@ -76,7 +76,7 @@ fun ShoulderFlexor(navController: NavController) {
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ShoulderRotation") }) {
+        Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 

@@ -22,10 +22,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ArmReachFront(navController: NavController) {
+fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
     val options = listOf("Set 1", "Set 2", "Set 3")
@@ -90,8 +92,7 @@ fun ArmReachFront(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewArmReachFront() {
-
     val navController = rememberNavController()
-
     ArmReachFront(navController)
 }
+

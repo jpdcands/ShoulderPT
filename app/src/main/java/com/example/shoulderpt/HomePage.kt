@@ -34,7 +34,12 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun HomePage(navController: NavController) {
+fun HomePage(navController: NavController, viewModel: ExerciseViewModel) {
+
+    val selectedOption = viewModel.selectedOption.value
+    val options = viewModel.options// Observe the selected option
+
+
     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
@@ -146,10 +151,12 @@ fun NamesLazyColumn(navController: NavController) {
     }
 }
 
+/*@Composable
+fun mockNavController() = rememberNavController()
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewHomePage() {
-    val navController = rememberNavController()
-    HomePage(navController)
-}
+    HomePage(navController = mockNavController())
+} */
 

@@ -34,6 +34,7 @@ class ExerciseViewModel(private val state: SavedStateHandle) : ViewModel() {
     }
 
     var options: List<String>
+        
         get() = state.get<List<String>>(OPTIONS_KEY) ?: defaultOptions
         set(value) {
             state[OPTIONS_KEY] = value

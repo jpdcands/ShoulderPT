@@ -29,8 +29,11 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
-    var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Set 1", "Set 2", "Set 3")
+    var selectedOption = viewModel.selectedOption.value
+    val options = viewModel.options
+
+//    var selectedOption by remember { mutableStateOf("Option 1") }
+//    val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
         modifier = Modifier
@@ -68,8 +71,8 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
-                        selected = option == selectedOption,
-                        onClick = { selectedOption = option }
+                        selected = selectedOption == option,
+                        onClick = { viewModel.updateSelectedOption(option) }
                     )
                 }
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
@@ -80,15 +83,22 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
         Button(onClick = { navController.navigate("ExternalRotator") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
-
         Spacer(modifier = Modifier.height(30.dp))
-
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
+        Spacer(modifier = Modifier.height(30.dp))
+        // Third button
+        Button(onClick = {
+            viewModel.clearSelectedOption()
+        },  Modifier.wrapContentSize()
+        ) {
+            Text("Clear All Sets", fontSize = 20.sp)
+        }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewArmReachFront() {

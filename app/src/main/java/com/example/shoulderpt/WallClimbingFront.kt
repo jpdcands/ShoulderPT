@@ -27,8 +27,8 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
-    var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Set 1", "Set 2", "Set 3")
+    val selectedOption = viewModel.selectedOption.value
+    val options = viewModel.options
 
     Column(
         modifier = Modifier
@@ -66,8 +66,8 @@ fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
-                        selected = option == selectedOption,
-                        onClick = { selectedOption = option }
+                        selected = selectedOption == option,
+                        onClick = { viewModel.updateSelectedOption(option) }
                     )
                 }
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group

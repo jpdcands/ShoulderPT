@@ -1,6 +1,5 @@
 package com.example.shoulderpt
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,7 +7,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -16,7 +14,6 @@ import androidx.navigation.NavController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.RadioButton
-import androidx.compose.runtime.*
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,10 +23,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun WallPushUp(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
-    var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Set 1", "Set 2", "Set 3")
+    var selectedOption = viewModel.selectedOption.value
+    val options = viewModel.options
+
+//    var selectedOption by remember { mutableStateOf("Option 1") }
+//    val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
         modifier = Modifier
@@ -39,11 +39,11 @@ fun WallPushUp(navController: NavController, viewModel: ExerciseViewModel = view
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Wall Push Up", style = MaterialTheme.typography.headlineLarge)
+        Text("Arm Reach Front", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.wallpushup), // Replace with your image resource
-            contentDescription = "Pendulum",
+            painter = painterResource(id = R.drawable.scapulararmreach), // Replace with your image resource
+            contentDescription = "Scapular Exercise: Arm Reach",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -67,8 +67,8 @@ fun WallPushUp(navController: NavController, viewModel: ExerciseViewModel = view
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
-                        selected = option == selectedOption,
-                        onClick = { selectedOption = option }
+                        selected = selectedOption == option,
+                        onClick = { viewModel.updateSelectedOption(option) }
                     )
                 }
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
@@ -76,23 +76,29 @@ fun WallPushUp(navController: NavController, viewModel: ExerciseViewModel = view
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ArmRaiseSide") }) {
+        Button(onClick = { navController.navigate("ExternalRotator") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
-
         Spacer(modifier = Modifier.height(30.dp))
-
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
+        Spacer(modifier = Modifier.height(30.dp))
+        // Third button
+        Button(onClick = {
+            viewModel.clearSelectedOption()
+        },  Modifier.wrapContentSize()
+        ) {
+            Text("Clear All Sets", fontSize = 20.sp)
+        }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreviewWallPushUp() {
-
+fun DefaultPreviewArmReachFront() {
     val navController = rememberNavController()
-
-    WallPushUp(navController)
+    ArmReachFront(navController)
 }
+

@@ -1,6 +1,6 @@
 package com.example.shoulderpt
 
-import androidx.compose.foundation.layout.Box
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -22,18 +21,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
-    var selectedOption = viewModel.selectedOption.value
-    val options = viewModel.options
-
-//    var selectedOption by remember { mutableStateOf("Option 1") }
-//    val options = listOf("Set 1", "Set 2", "Set 3")
+    var selectedOption by remember { mutableStateOf("Option 1") }
+    val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
         modifier = Modifier
@@ -43,11 +38,11 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Arm Reach Front", style = MaterialTheme.typography.headlineLarge)
+        Text("Wall Climber Front", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.armreachfront), // Replace with your image resource
-            contentDescription = "Scapular Exercise: Arm Reach",
+            painter = painterResource(id = R.drawable.wallclimbingfront), // Replace with your image resource
+            contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -71,8 +66,8 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(text = option, textAlign = TextAlign.Center)
                     RadioButton(
-                        selected = selectedOption == option,
-                        onClick = { viewModel.updateSelectedOption(option) }
+                        selected = option == selectedOption,
+                        onClick = { selectedOption = option }
                     )
                 }
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
@@ -80,29 +75,23 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ExternalRotator") }) {
+        Button(onClick = { navController.navigate("WallClimberSide") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
+
         Spacer(modifier = Modifier.height(30.dp))
+
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
-        Spacer(modifier = Modifier.height(30.dp))
-        // Third button
-        Button(onClick = {
-            viewModel.clearSelectedOption()
-        },  Modifier.wrapContentSize()
-        ) {
-            Text("Clear All Sets", fontSize = 20.sp)
-        }
     }
 }
-
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreviewArmReachFront() {
-    val navController = rememberNavController()
-    ArmReachFront(navController)
-}
+fun DefaultPreviewWallClimberFront() {
 
+    val navController = rememberNavController()
+
+    WallClimberFront(navController)
+}

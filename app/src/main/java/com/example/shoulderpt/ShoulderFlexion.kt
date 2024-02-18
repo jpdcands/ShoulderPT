@@ -1,6 +1,6 @@
 package com.example.shoulderpt
 
-import androidx.compose.foundation.layout.Box
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -26,10 +25,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Pendulum(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun ShoulderFlexor(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
-    val options = listOf("Set 1", "Set 2", "Set 3", "Set 4")
+    val options = listOf("Set 1", "Set 2", "Set 3")
 
     Column(
         modifier = Modifier
@@ -39,10 +38,10 @@ fun Pendulum(navController: NavController, viewModel: ExerciseViewModel = viewMo
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Text("Shoulder Flexor", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.pendulum), // Replace with your image resource
+            painter = painterResource(id = R.drawable.shoulderflexion), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )
@@ -74,25 +73,25 @@ fun Pendulum(navController: NavController, viewModel: ExerciseViewModel = viewMo
                 Spacer(modifier = Modifier.width(20.dp)) // Space between each radio button group
             }
         }
-                     Spacer(modifier = Modifier.height(24.dp))
-                    // First button
-                    Button(onClick = { navController.navigate("PosteriorStretching") }) {
-                        Text("To Next Exercise", fontSize = 20.sp)
-                    }
+        Spacer(modifier = Modifier.height(24.dp))
+        // First button
+        Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
+            Text("To Next Exercise", fontSize = 20.sp)
+        }
 
-                    Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
-                    // Second button
-                    Button(onClick = { navController.navigate("HomePage") }) {
-                        Text("Back to Exercise List", fontSize = 20.sp)
-                    }
-                }
-            }
-    @Preview(showBackground = true)
-    @Composable
-    fun DefaultPreviewPendulum() {
-
-        val navController = rememberNavController()
-
-        Pendulum(navController)
+        // Second button
+        Button(onClick = { navController.navigate("HomePage") }) {
+            Text("Back to Exercise List", fontSize = 20.sp)
+        }
     }
+}
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreviewShoulderFlexor() {
+
+    val navController = rememberNavController()
+
+    ShoulderFlexor(navController)
+}

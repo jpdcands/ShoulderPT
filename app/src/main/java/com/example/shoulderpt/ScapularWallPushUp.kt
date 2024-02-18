@@ -1,7 +1,5 @@
 package com.example.shoulderpt
 
-
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +7,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,7 +24,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun WallPushUp(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     var selectedOption by remember { mutableStateOf("Option 1") }
     val options = listOf("Set 1", "Set 2", "Set 3")
@@ -40,10 +37,10 @@ fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel 
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Wall Climber Front", style = MaterialTheme.typography.headlineLarge)
+        Text("Wall Push Up", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.wallclimberfront), // Replace with your image resource
+            painter = painterResource(id = R.drawable.wallpushup), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )
@@ -77,7 +74,7 @@ fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel 
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("WallClimberSide") }) {
+        Button(onClick = { navController.navigate("ArmRaiseSide") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
@@ -91,9 +88,9 @@ fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel 
 }
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreviewWallClimberFront() {
+fun DefaultPreviewWallPushUp() {
 
     val navController = rememberNavController()
 
-    WallClimberFront(navController)
+    WallPushUp(navController)
 }

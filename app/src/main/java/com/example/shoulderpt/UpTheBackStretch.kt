@@ -43,7 +43,7 @@ fun UpTheBackStretch(navController: NavController, viewModel: ExerciseViewModel 
         Text("Up-the-Back Stretch", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.wallpushup), // Replace with your image resource
+            painter = painterResource(id = R.drawable.upthebackstretch), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )

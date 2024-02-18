@@ -27,11 +27,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun HomePage(navController: NavController, viewModel: ExerciseViewModel) {
@@ -96,22 +94,22 @@ fun NamesLazyColumn(navController: NavController) {
     @Composable
     fun getImageResourceForExercise(exerciseName: String): Int {
         return when (exerciseName) {
-            "Pendulum" -> R.drawable.pendulum // Replace with actual image name
+            "Pendulum" -> R.drawable.pendulumswing // Replace with actual image name
             "Posterior Stretching" -> R.drawable.posteriorstretching // Replace with actual image name
             "Up-the-back Stretch" -> R.drawable.upthebackstretch // Replace with actual image name
             "Overhead Stretch" -> R.drawable.overtheheadstretch// Replace with actual image name
-            "Shoulder Flexor" -> R.drawable.shoulderflexordown // Replace with actual image name
+            "Shoulder Flexor" -> R.drawable.shoulderflexion // Replace with actual image name
             "Shoulder Rotation" -> R.drawable.shoulderrotation // Replace with actual image name
-            "Wall Climber-Side" -> R.drawable.wallclimberside // Replace with actual image name
-            "Wall Climber-Front" -> R.drawable.wallclimberfront // Replace with actual image name
+            "Wall Climber-Side" -> R.drawable.wallclimbingside // Replace with actual image name
+            "Wall Climber-Front" -> R.drawable.wallclimbingfront // Replace with actual image name
             "Shoulder Blade Squeeze" -> R.drawable.shoulderbladesqueeze // Replace with actual image name
-            "Arm Reach-Front" -> R.drawable.scapularretraction // Replace with actual image name
+            "Arm Reach-Front" -> R.drawable.scapularretractionfront // Replace with actual image name
             "Arm Raise-Side" -> R.drawable.armraiseside // Replace with actual image name
             "Shoulder Flexor and Extensor" -> R.drawable.shoulderflexorandextensor // Replace with actual image name
             "Wall Push-Up" -> R.drawable.wallpushup // Replace with actual image name
-            "Scapular Retraction" -> R.drawable.scapularretractiontwo // Replace with actual image name
-            "Internal Rotator" -> R.drawable.internalrotation // Replace with actual image name
-            "External Rotator" -> R.drawable.externalrotation // Replace with actual image name
+            "Scapular Retraction" -> R.drawable.scapularretractionpulley // Replace with actual image name
+            "Internal Rotator" -> R.drawable.internalrotator // Replace with actual image name
+            "External Rotator" -> R.drawable.externalrotator // Replace with actual image name
             else -> R.drawable.shoulderpain // Default image if no match is found
         }
     }

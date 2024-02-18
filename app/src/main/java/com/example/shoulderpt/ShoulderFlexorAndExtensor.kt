@@ -42,7 +42,7 @@ fun ShoulderFlexorAndExtensor(navController: NavController, viewModel: ExerciseV
         Text("Shoulder Flexor & Extensor", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.shoulderrotation), // Replace with your image resource
+            painter = painterResource(id = R.drawable.shoulderflexorandextensor), // Replace with your image resource
             contentDescription = "Pendulum",
             modifier = Modifier.size(250.dp)
         )

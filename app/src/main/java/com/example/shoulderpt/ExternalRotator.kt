@@ -42,7 +42,7 @@ fun ExternalRotator(navController: NavController, viewModel: ExerciseViewModel =
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.externalrotator), // Replace with your image resource
-            contentDescription = "External Rotation",
+            contentDescription = "External Rotator",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -75,11 +75,11 @@ fun ExternalRotator(navController: NavController, viewModel: ExerciseViewModel =
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("InternalRotator") }) {
+        Button(onClick = { navController.navigate("PendulumSwing") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {

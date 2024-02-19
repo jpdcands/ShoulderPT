@@ -23,7 +23,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun ScapularArmReach(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     var selectedOption = viewModel.selectedOption.value
     val options = viewModel.options
@@ -39,7 +39,7 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Arm Reach Front", style = MaterialTheme.typography.headlineLarge)
+        Text("Scapular Arm Reach", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.scapulararmreach), // Replace with your image resource
@@ -76,10 +76,10 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ExternalRotator") }) {
+        Button(onClick = { navController.navigate("ArmRaiseSide") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
@@ -99,6 +99,6 @@ fun ArmReachFront(navController: NavController, viewModel: ExerciseViewModel = v
 @Composable
 fun DefaultPreviewArmReachFront() {
     val navController = rememberNavController()
-    ArmReachFront(navController)
+    ScapularArmReach(navController)
 }
 

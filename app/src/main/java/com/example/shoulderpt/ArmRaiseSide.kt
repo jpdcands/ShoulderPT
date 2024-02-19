@@ -87,7 +87,7 @@ fun ArmRaiseSide(navController: NavController, viewModel: ExerciseViewModel = vi
            // modifier = Modifier.fillMaxWidth()
         ) {
             Button(
-                onClick = { navController.navigate("ArmReachFront") },
+                onClick = { navController.navigate("ShoulderFlexorAndExtensor") },
                 modifier = Modifier.wrapContentSize() // Use wrapContentSize for buttons
             ) {
                 Text("To Next Exercise", fontSize = 20.sp)

@@ -75,11 +75,11 @@ fun ScapularRetraction(navController: NavController, viewModel: ExerciseViewMode
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ShoulderBladeSqueeze") }) {
+        Button(onClick = { navController.navigate("InternalRotator") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {

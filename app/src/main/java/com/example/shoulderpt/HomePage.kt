@@ -54,38 +54,38 @@ fun HomePage(navController: NavController, viewModel: ExerciseViewModel) {
 @Composable
 fun NamesLazyColumn(navController: NavController) {
     val exerciseList = listOf(
-        "Pendulum",
+        "Pendulum Swing",
         "Posterior Stretching",
-        "Up-the-back Stretch",
+        "Up The Back Stretch",
         "Overhead Stretch",
-        "Shoulder Flexor",
+        "Shoulder Flexion",
         "Shoulder Rotation",
-        "Wall Climber-Side",
-        "Wall Climber-Front",
+        "Wall Climber Side",
+        "Wall Climber Front",
         "Shoulder Blade Squeeze",
-        "Arm Reach-Front",
-        "Arm Raise-Side",
+        "Scapular Arm Reach",
+        "Arm Raise Side",
         "Shoulder Flexor and Extensor",
-        "Wall Push-Up",
+        "Scapular Wall Push-Up",
         "Scapular Retraction",
         "Internal Rotator",
         "External Rotator"
     )
 
     val exerciseToRouteMap = mapOf(
-        "Pendulum" to "Pendulum",
+        "Pendulum Swing" to "pendulumSwing",
         "Posterior Stretching" to "posteriorStretching",
-        "Up-the-back Stretch" to "upTheBackStretch",
+        "Up The Back Stretch" to "upTheBackStretch",
         "Overhead Stretch" to "overheadStretch",
-        "Shoulder Flexor" to "shoulderFlexor",
+        "Shoulder Flexion" to "shoulderFlexion",
         "Shoulder Rotation" to "shoulderRotation",
-        "Wall Climber-Side" to "wallClimberSide",
-        "Wall Climber-Front" to "wallClimberFront",
+        "Wall Climbing Side" to "wallClimbingSide",
+        "Wall Climbing Front" to "wallClimbingFront",
         "Shoulder Blade Squeeze" to "shoulderBladeSqueeze",
-        "Arm Reach-Front" to "armReachFront",
-        "Arm Raise-Side" to "armRaiseSide",
+        "Scapular Arm Reach" to "scapularArmReach",
+        "Arm Raise Side" to "armRaiseSide",
         "Shoulder Flexor and Extensor" to "shoulderFlexorAndExtensor",
-        "Wall Push-Up" to "wallPushUp",
+        "Scapular Wall Push-Up" to "scapularWallPushUp",
         "Scapular Retraction" to "scapularRetraction",
         "Internal Rotator" to "internalRotator",
         "External Rotator" to "externalRotator"
@@ -94,19 +94,19 @@ fun NamesLazyColumn(navController: NavController) {
     @Composable
     fun getImageResourceForExercise(exerciseName: String): Int {
         return when (exerciseName) {
-            "Pendulum" -> R.drawable.pendulumswing // Replace with actual image name
+            "Pendulum Swing" -> R.drawable.pendulumswing // Replace with actual image name
             "Posterior Stretching" -> R.drawable.posteriorstretching // Replace with actual image name
-            "Up-the-back Stretch" -> R.drawable.upthebackstretch // Replace with actual image name
+            "Up The Back Stretch" -> R.drawable.upthebackstretch // Replace with actual image name
             "Overhead Stretch" -> R.drawable.overtheheadstretch// Replace with actual image name
-            "Shoulder Flexor" -> R.drawable.shoulderflexion // Replace with actual image name
+            "Shoulder Flexion" -> R.drawable.shoulderflexion // Replace with actual image name
             "Shoulder Rotation" -> R.drawable.shoulderrotation // Replace with actual image name
-            "Wall Climber-Side" -> R.drawable.wallclimbingside // Replace with actual image name
-            "Wall Climber-Front" -> R.drawable.wallclimbingfront // Replace with actual image name
+            "Wall Climbing Side" -> R.drawable.wallclimbingside // Replace with actual image name
+            "Wall Climbing Front" -> R.drawable.wallclimbingfront // Replace with actual image name
             "Shoulder Blade Squeeze" -> R.drawable.shoulderbladesqueeze // Replace with actual image name
-            "Arm Reach-Front" -> R.drawable.scapularretractionfront // Replace with actual image name
-            "Arm Raise-Side" -> R.drawable.armraiseside // Replace with actual image name
+            "Scapular Arm Reach" -> R.drawable.scapulararmreach // Replace with actual image name
+            "Arm Raise Side" -> R.drawable.armraiseside // Replace with actual image name
             "Shoulder Flexor and Extensor" -> R.drawable.shoulderflexorandextensor // Replace with actual image name
-            "Wall Push-Up" -> R.drawable.wallpushup // Replace with actual image name
+            "Scapular Wall Push-Up" -> R.drawable.wallpushup // Replace with actual image name
             "Scapular Retraction" -> R.drawable.scapularretractionpulley // Replace with actual image name
             "Internal Rotator" -> R.drawable.internalrotator // Replace with actual image name
             "External Rotator" -> R.drawable.externalrotator // Replace with actual image name

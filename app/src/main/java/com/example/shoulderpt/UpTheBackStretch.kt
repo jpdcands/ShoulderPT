@@ -77,11 +77,11 @@ fun UpTheBackStretch(navController: NavController, viewModel: ExerciseViewModel 
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("WallClimberFront") }) {
+        Button(onClick = { navController.navigate("OverheadStretch") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {

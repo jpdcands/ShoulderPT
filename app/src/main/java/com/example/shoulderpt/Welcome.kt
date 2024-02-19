@@ -61,19 +61,18 @@ class Welcome : ComponentActivity() {
 sealed class Screen(val route: String) {
     object Welcome : Screen("Welcome")
     object HomePage : Screen("HomePage")
-    object Pendulum : Screen("Pendulum")
+    object PendulumSwing : Screen("PendulumSwing")
     object PosteriorStretching : Screen("PosteriorStretching")
     object UpTheBackStretch : Screen("UpTheBackStretch")
     object OverheadStretch : Screen("OverheadStretch")
-    object ShoulderFlexor : Screen("ShoulderFlexor")
+    object ShoulderFlexion : Screen("ShoulderFlexion")
     object ShoulderRotation : Screen("ShoulderRotation")
-    object WallClimberSide : Screen("WallClimberSide")
-    object WallClimberFront : Screen("WallClimberFront")
+    object WallClimbingSide : Screen("WallClimbingSide")
+    object WallClimbingFront : Screen("WallClimbingFront")
     object ShoulderBladeSqueeze : Screen("ShoulderBladeSqueeze")
-    object ArmReachFront : Screen("ArmReachFront")
-    object ArmReachSide : Screen("ArmReachSide")
-    object ShoulderFlexorAndExtensor : Screen("ShoulderFlexorAndExtensor")
+    object ScapularArmReach : Screen("ScapularArmReach")
     object ArmRaiseSide : Screen("ArmRaiseSide")
+    object ShoulderFlexorAndExtensor : Screen("ShoulderFlexorAndExtensor")
     object WallPushUp : Screen("WallPushUp")
     object ScapularRetraction : Screen("ScapularRetraction")
     object InternalRotator : Screen("InternalRotator")
@@ -92,28 +91,28 @@ fun MyApp(viewModel: ExerciseViewModel) {
             Welcome(navController) }
         composable(Screen.HomePage.route) {
             HomePage(navController, viewModel) }
-        composable(Screen.Pendulum.route) {
-            Pendulum(navController, viewModel) }
+        composable(Screen.PendulumSwing.route) {
+            PendulumSwing(navController, viewModel) }
         composable(Screen.UpTheBackStretch.route) {
             UpTheBackStretch(navController, viewModel) }
         composable(Screen.ArmRaiseSide.route) {
             ArmRaiseSide(navController, viewModel) }
-        composable(Screen.ShoulderFlexor.route) {
-            ShoulderFlexor(navController, viewModel) }
+        composable(Screen.ShoulderFlexion.route) {
+            ShoulderFlexion(navController, viewModel) }
         composable(Screen.OverheadStretch.route) {
             OverheadStretch(navController, viewModel) }
         composable(Screen.PosteriorStretching.route) {
             PosteriorStretching(navController, viewModel) }
         composable(Screen.ShoulderRotation.route) {
             ShoulderRotation(navController, viewModel) }
-        composable(Screen.WallClimberSide.route) {
-            WallClimberSide(navController, viewModel) }
-        composable(Screen.WallClimberFront.route) {
-            WallClimberFront(navController, viewModel) }
+        composable(Screen.WallClimbingSide.route) {
+            WallClimbingSide(navController, viewModel) }
+        composable(Screen.WallClimbingFront.route) {
+            WallClimbingFront(navController, viewModel) }
         composable(Screen.ShoulderBladeSqueeze.route) {
             ShoulderBladeSqueeze(navController, viewModel) }
-        composable(Screen.ArmReachFront.route) {
-            ArmReachFront(navController, viewModel) }
+        composable(Screen.ScapularArmReach.route) {
+            ScapularArmReach(navController, viewModel) }
         composable(Screen.ShoulderFlexorAndExtensor.route) {
             ShoulderFlexorAndExtensor(navController, viewModel) }
         composable(Screen.WallPushUp.route) {

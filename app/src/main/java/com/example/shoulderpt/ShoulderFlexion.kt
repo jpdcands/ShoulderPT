@@ -25,7 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ShoulderFlexor(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun ShoulderFlexion(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     var selectedOption = viewModel.selectedOption.value
     val options = viewModel.options
@@ -38,11 +38,11 @@ fun ShoulderFlexor(navController: NavController, viewModel: ExerciseViewModel = 
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Shoulder Flexor", style = MaterialTheme.typography.headlineLarge)
+        Text("Shoulder Flexion", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.shoulderflexion), // Replace with your image resource
-            contentDescription = "Pendulum",
+            contentDescription = "Shoulder Flexion",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -75,11 +75,11 @@ fun ShoulderFlexor(navController: NavController, viewModel: ExerciseViewModel = 
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ShoulderFlexorAndExtensor") }) {
+        Button(onClick = { navController.navigate("ShoulderRotation") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
@@ -101,5 +101,5 @@ fun DefaultPreviewShoulderFlexor() {
 
     val navController = rememberNavController()
 
-    ShoulderFlexor(navController)
+    ShoulderFlexion(navController)
 }

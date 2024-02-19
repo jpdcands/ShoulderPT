@@ -74,11 +74,11 @@ fun WallPushUp(navController: NavController, viewModel: ExerciseViewModel = view
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("ArmRaiseSide") }) {
+        Button(onClick = { navController.navigate("ScapularRetraction") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {

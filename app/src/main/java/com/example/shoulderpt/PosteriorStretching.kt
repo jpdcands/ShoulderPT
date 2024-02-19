@@ -76,11 +76,11 @@ fun PosteriorStretching(navController: NavController, viewModel: ExerciseViewMod
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = {  navController.navigate("ScapularRetraction") }) {
+        Button(onClick = {  navController.navigate("UpTheBackStretch") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {

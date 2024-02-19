@@ -25,7 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun WallClimbingFront(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     val selectedOption = viewModel.selectedOption.value
     val options = viewModel.options
@@ -38,11 +38,11 @@ fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel 
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Wall Climber Front", style = MaterialTheme.typography.headlineLarge)
+        Text("Wall Climbing Front", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.wallclimbingfront), // Replace with your image resource
-            contentDescription = "Pendulum",
+            contentDescription = "Wall Climbing Front",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -75,23 +75,33 @@ fun WallClimberFront(navController: NavController, viewModel: ExerciseViewModel 
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("WallClimberSide") }) {
+        Button(onClick = { navController.navigate("ShoulderBladeSqueeze") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
             Text("Back to Exercise List", fontSize = 20.sp)
         }
+        Button(
+            onClick = {
+                viewModel.clearSelectedOption()
+            },
+            modifier = Modifier.wrapContentSize()
+        ) {
+            Text("Clear All Sets", fontSize = 20.sp)
+        }
+        Spacer(modifier = Modifier.height(8.dp))
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewWallClimberFront() {
 
     val navController = rememberNavController()
 
-    WallClimberFront(navController)
+    WallClimbingFront(navController)
 }

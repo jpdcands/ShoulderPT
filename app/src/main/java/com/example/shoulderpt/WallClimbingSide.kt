@@ -25,7 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun WallClimberSide(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun WallClimbingSide(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
     val selectedOption = viewModel.selectedOption.value
     val options = viewModel.options
@@ -38,11 +38,11 @@ fun WallClimberSide(navController: NavController, viewModel: ExerciseViewModel =
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Wall Climber Side", style = MaterialTheme.typography.headlineLarge)
+        Text("Wall Climbing Side", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.wallclimbingside), // Replace with your image resource
-            contentDescription = "Pendulum",
+            contentDescription = "Wall Climbing Side",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -75,11 +75,11 @@ fun WallClimberSide(navController: NavController, viewModel: ExerciseViewModel =
         }
         Spacer(modifier = Modifier.height(24.dp))
         // First button
-        Button(onClick = { navController.navigate("WallPushUp") }) {
+        Button(onClick = { navController.navigate("WallClimbingFront") }) {
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
@@ -101,5 +101,5 @@ fun DefaultPreviewWallClimberSide() {
 
     val navController = rememberNavController()
 
-    WallClimberSide(navController)
+    WallClimbingSide(navController)
 }

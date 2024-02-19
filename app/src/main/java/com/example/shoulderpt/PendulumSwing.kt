@@ -24,7 +24,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun Pendulum(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
+fun PendulumSwing(navController: NavController, viewModel: ExerciseViewModel = viewModel()) {
 
    val selectedOption = viewModel.selectedOption.value
     val options = viewModel.options
@@ -37,11 +37,11 @@ fun Pendulum(navController: NavController, viewModel: ExerciseViewModel = viewMo
         verticalArrangement = Arrangement.Top
     ) {
         Spacer(modifier = Modifier.height(20.dp)) // Increased height
-        Text("Pendulum", style = MaterialTheme.typography.headlineLarge)
+        Text("Pendulum Swing", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
             painter = painterResource(id = R.drawable.pendulumswing), // Replace with your image resource
-            contentDescription = "Pendulum",
+            contentDescription = "Pendulum Swing",
             modifier = Modifier.size(250.dp)
         )
         val text = """
@@ -78,7 +78,7 @@ fun Pendulum(navController: NavController, viewModel: ExerciseViewModel = viewMo
             Text("To Next Exercise", fontSize = 20.sp)
         }
 
-        Spacer(modifier = Modifier.height(30.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         // Second button
         Button(onClick = { navController.navigate("HomePage") }) {
@@ -102,5 +102,5 @@ fun DefaultPreviewPendulum() {
 
     val navController = rememberNavController()
 
-    Pendulum(navController)
+    PendulumSwing(navController)
 }

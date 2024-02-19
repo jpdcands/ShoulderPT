@@ -41,7 +41,7 @@ fun WallClimbingSide(navController: NavController, viewModel: ExerciseViewModel 
         Text("Wall Climbing Side", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(2.dp))
         Image(
-            painter = painterResource(id = R.drawable.wallclimbingside), // Replace with your image resource
+            painter = painterResource(id = R.drawable.wallclimbingside),
             contentDescription = "Wall Climbing Side",
             modifier = Modifier.size(250.dp)
         )

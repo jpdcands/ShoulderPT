@@ -30,7 +30,7 @@ class ExerciseViewModel(private val state: SavedStateHandle) : ViewModel() {
         private const val OPTIONS_KEY = "options_key"
         private const val SELECTED_OPTION_KEY = "selected_option_key"
         //Add a key (above) for saving the selected option
-        private val defaultOptions = listOf("Set 1", "Set 2", "Set 3", "Set 4")
+        private val defaultOptions = listOf("Set 1", "Set 2", "Set 3")
     }
 
     var options: List<String>

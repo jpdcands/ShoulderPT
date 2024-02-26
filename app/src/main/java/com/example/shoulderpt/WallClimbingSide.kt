@@ -95,6 +95,7 @@ fun WallClimbingSide(navController: NavController, viewModel: ExerciseViewModel 
         Spacer(modifier = Modifier.height(8.dp))
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewWallClimberSide() {

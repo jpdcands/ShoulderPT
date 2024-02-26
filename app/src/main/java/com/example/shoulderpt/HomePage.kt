@@ -95,7 +95,7 @@ fun NamesLazyColumn(navController: NavController) {
     fun getImageResourceForExercise(exerciseName: String): Int {
         return when (exerciseName) {
             "Pendulum Swing" -> R.drawable.pendulumswing // Replace with actual image name
-            "Posterior Stretching" -> R.drawable.posteriorstretching // Replace with actual image name
+            "Posterior Stretching" -> R.drawable.posteriorstretching // Replace with actual image
             "Up The Back Stretch" -> R.drawable.upthebackstretch // Replace with actual image name
             "Overhead Stretch" -> R.drawable.overtheheadstretch// Replace with actual image name
             "Shoulder Flexion" -> R.drawable.shoulderflexion // Replace with actual image name

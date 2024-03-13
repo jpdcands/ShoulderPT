@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -29,7 +28,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ImageSection() {
+fun ImageSectionPendulumSwing() {
     Image(
         painter = painterResource(id = R.drawable.pendulumswing),
         contentDescription = "Pendulum Swing",
@@ -38,7 +37,7 @@ fun ImageSection() {
 }
 
 @Composable
-fun InstructionsText() {
+fun InstructionsTextPendulumSwing() {
     val text = """
         1. This exercise does not use the arm muscles - use your legs and hips to create movement.
         2. Swing arm back and forth like a pendulum then use your hips to make circles
@@ -51,12 +50,12 @@ fun InstructionsText() {
         style = MaterialTheme.typography.bodyLarge,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(10.dp)
+            .padding(5.dp)
     )
 }
 
 @Composable
-fun RadioButtonsSection(navController: NavController, viewModel: ExerciseViewModel) {
+fun RadioButtonsSectionPendulumSwing(navController: NavController, viewModel: ExerciseViewModel) {
     val selectedOption = viewModel.selectedOption.value
     val options = viewModel.options
 
@@ -65,7 +64,10 @@ fun RadioButtonsSection(navController: NavController, viewModel: ExerciseViewMod
         modifier = Modifier.fillMaxWidth()
     ) {
         options.forEach { option ->
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
                 Text(text = option, textAlign = TextAlign.Center)
                 RadioButton(
                     selected = selectedOption == option,
@@ -77,21 +79,21 @@ fun RadioButtonsSection(navController: NavController, viewModel: ExerciseViewMod
 }
 
 @Composable
-fun NextExerciseButton(navController: NavController) {
+fun NextExerciseButtonPendulumSwing(navController: NavController) {
     Button(onClick = { navController.navigate("PosteriorStretching") }) {
         Text("To Next Exercise", fontSize = 20.sp)
     }
 }
 
 @Composable
-fun BackToExerciseListButton(navController: NavController) {
+fun BackToExerciseListButtonPendulumSwing(navController: NavController) {
     Button(onClick = { navController.navigate("HomePage") }) {
         Text("Back to Exercise List", fontSize = 20.sp)
     }
 }
 
 @Composable
-fun ClearAllSetsButton(viewModel: ExerciseViewModel) {
+fun ClearAllSetsButtonPendulumSwing(viewModel: ExerciseViewModel) {
     Button(
         onClick = { viewModel.clearSelectedOption() },
         modifier = Modifier.wrapContentSize()
@@ -107,30 +109,26 @@ fun PendulumSwing(navController: NavController, viewModel: ExerciseViewModel = v
             .fillMaxSize()
             .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Spacer(modifier = Modifier.height(8.dp))
         Text("Pendulum Swing", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(8.dp))
-        ImageSection()
-        InstructionsText()
+        ImageSectionPendulumSwing()
+        InstructionsTextPendulumSwing()
+        Spacer(modifier = Modifier.height(8.dp)) // Control this value to adjust spacing
         Spacer(modifier = Modifier.height(8.dp))
         RadioButtonsSection(navController, viewModel)
-    //   Spacer(modifier = Modifier.height(16.dp))
-        NextExerciseButton(navController)
-      //  Spacer(modifier = Modifier.height(20.dp))
-        BackToExerciseListButton(navController)
-        ClearAllSetsButton(viewModel)
-     //   Spacer(modifier = Modifier.height(8.dp))
+        NextExerciseButtonPendulumSwing(navController)
+        BackToExerciseListButtonPendulumSwing(navController)
+        ClearAllSetsButtonPendulumSwing(viewModel)
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreviewPendulum() {
-
+fun DefaultPreviewPendulumSwing() {
     val navController = rememberNavController()
-
     PendulumSwing(navController)
 }
 

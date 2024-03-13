@@ -31,7 +31,7 @@ import androidx.navigation.compose.rememberNavController
 fun ImageSection() {
     Image(
         painter = painterResource(id = R.drawable.posteriorstretching),
-        contentDescription = "Pendulum Swing",
+        contentDescription = "Posterior Stretching",
         modifier = Modifier.size(250.dp)
     )
 }
@@ -112,7 +112,7 @@ fun PosteriorStretching(navController: NavController, viewModel: ExerciseViewMod
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Spacer(modifier = Modifier.height(8.dp))
-        Text("UpTheBackStretch", style = MaterialTheme.typography.headlineLarge)
+        Text("Posterior Stretching", style = MaterialTheme.typography.headlineLarge)
         Spacer(modifier = Modifier.height(8.dp))
         ImageSection()
         InstructionsText()
@@ -129,6 +129,6 @@ fun PosteriorStretching(navController: NavController, viewModel: ExerciseViewMod
 @Composable
 fun DefaultPreviewPosteriorStretching() {
     val navController = rememberNavController()
-    (navController)
+    PosteriorStretching(navController)
 }
 

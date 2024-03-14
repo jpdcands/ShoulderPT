@@ -73,7 +73,7 @@ sealed class Screen(val route: String) {
     object ScapularArmReach : Screen("ScapularArmReach")
     object ArmRaiseSide : Screen("ArmRaiseSide")
     object ShoulderFlexorAndExtensor : Screen("ShoulderFlexorAndExtensor")
-    object WallPushUp : Screen("WallPushUp")
+    object WallPushUp : Screen("ScapularWallPushUp")
     object ScapularRetraction : Screen("ScapularRetraction")
     object InternalRotator : Screen("InternalRotator")
     object ExternalRotator : Screen("ExternalRotator")
@@ -116,7 +116,7 @@ fun MyApp(viewModel: ExerciseViewModel) {
         composable(Screen.ShoulderFlexorAndExtensor.route) {
             ShoulderFlexorAndExtensor(navController, viewModel) }
         composable(Screen.WallPushUp.route) {
-            WallPushUp(navController, viewModel) }
+            ScapularWallPushUp(navController, viewModel) }
         composable(Screen.ScapularRetraction.route) {
             ScapularRetraction(navController, viewModel) }
         composable(Screen.InternalRotator.route) {

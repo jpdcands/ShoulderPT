@@ -40,10 +40,10 @@ fun ImageSectionUpTheBackStretch() {
 @Composable
 fun InstructionsTextUpTheBackStretch() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Light Stretch - Put your hand in your back pocket
+        2. Moderate Stretch - Hold your arm behind your back, palm out & with other hand pull the hand up
+        3. Put towel over shoulder - pull down with good arm to draw up the injured shoulder 
+        4. Hold each exercise for 15-30 seconds and repeat 2 to 4 times
     """.trimIndent()
 
     Text(

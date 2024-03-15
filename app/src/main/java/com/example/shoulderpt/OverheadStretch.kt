@@ -37,10 +37,10 @@ fun ImageSectionOverheadStretch() {
 @Composable
 fun InstructionsTextOverheadStretch() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. With your arms straight, bend over and hold onto a solid surface
+        2. With knees bent, bend over with arms straight
+        3. Lower your upper body and let your shoulder stretch
+        4. Hold for 15-30 seconds and repeat 2-4 times
     """.trimIndent()
 
     Text(

@@ -75,7 +75,7 @@ fun RadioButtonsSectionScapularWallPushUp(navController: NavController, viewMode
 
 @Composable
 fun NextExerciseButtonScapularWallPushUp(navController: NavController) {
-    Button(onClick = { navController.navigate("Scapularretractionpulley") }) {
+    Button(onClick = { navController.navigate("ScapularRetraction") }) {
         Text("To Next Exercise", fontSize = 20.sp)
     }
 }

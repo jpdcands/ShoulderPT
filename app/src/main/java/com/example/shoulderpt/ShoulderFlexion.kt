@@ -36,10 +36,10 @@ fun ImageSectionShoulderFlexion() {
 @Composable
 fun InstructionsTextShoulderFlexion() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Take a broom handle & lie on your back with palms down
+        2. Keep elbows straight and begin raising arms over the head
+        3. Raise the broom handle until you feel the stretch
+        4. Hold for 15-30 seconds for 2-4 times
     """.trimIndent()
 
     Text(

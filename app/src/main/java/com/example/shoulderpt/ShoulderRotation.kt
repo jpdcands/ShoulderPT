@@ -38,10 +38,10 @@ fun ImageSectionShoulderRotation() {
 @Composable
 fun InstructionsTextShoulderRotation() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Lie on back with broom handle, elbows bent and palms up
+        2. Keeping elbows close to body move the handle across the body
+        3. Move the handle move across your body toward the sore shoulder
+        4. Hold for 8-12 seconds and repeat 2 to 4 times
     """.trimIndent()
 
     Text(

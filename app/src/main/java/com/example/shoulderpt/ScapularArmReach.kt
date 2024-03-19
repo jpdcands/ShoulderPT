@@ -34,10 +34,10 @@ fun ImageSectionScapularArmReach() {
 @Composable
 fun InstructionsTextScapularArmReach() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Lie flat on back with arms raised
+        2. Reach slightly toward the ceiling with elbows straight
+        3. All motion should be from only the shoulder blades & lower
+        4. Repeat 8-12 times 3 times a day
     """.trimIndent()
 
     Text(

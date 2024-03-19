@@ -35,10 +35,10 @@ fun ImageSectionWallClimbingFront() {
 @Composable
 fun InstructionsTextWallClimbingFront() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Face a wall with fingers touching
+        2. With shoulder down walk fingers up as high as possible
+        3. Hold in up position 15-30 sec and walk down
+        4. Repeat 2-4 times 3 times a day
     """.trimIndent()
 
     Text(

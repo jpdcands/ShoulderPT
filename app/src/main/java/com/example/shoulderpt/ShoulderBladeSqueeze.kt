@@ -37,10 +37,9 @@ fun ImageSectionShoulderBladeSqueeze() {
 @Composable
 fun InstructionsTextShoulderBladeSqueeze() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Stand with arms at your side
+        2. Squeeze shoulder blades together and hold for 6 seconds
+        3. Repeat 8-12 times 3 times a day        
     """.trimIndent()
 
     Text(

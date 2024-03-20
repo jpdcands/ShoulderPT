@@ -35,10 +35,10 @@ fun ImageSectionScapularRetraction() {
 @Composable
 fun InstructionsTextScapularRetraction() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. With a band around a wall anchor at waist height hold each end
+        2. With elbows at sides and at 90 degrees pull the band back
+        3. As ROM increases gradually lift arms out to the side
+        4. Repeat 8-12 times doing 3 sets per day
     """.trimIndent()
 
     Text(

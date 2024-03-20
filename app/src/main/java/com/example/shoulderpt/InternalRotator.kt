@@ -35,10 +35,10 @@ fun ImageSectionInternalRotator() {
 @Composable
 fun InstructionsTextInternalRotator() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Tie a band around a wall anchor with elbow bent 90 degrees
+        2. With a towel between elbow & body & the bent elbow closest to anchor
+        3. Rotate arm toward body until it touches & reverse slowly
+        4. Repeat 8-12 times 3 times a day
     """.trimIndent()
 
     Text(

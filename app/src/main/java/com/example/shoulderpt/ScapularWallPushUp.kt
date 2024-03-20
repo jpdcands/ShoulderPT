@@ -34,10 +34,10 @@ fun ImageSectionScapularWallPushUp() {
 @Composable
 fun InstructionsTextScapularWallPushUp() {
     val text = """
-        1. This exercise does not use the arm muscles - use your legs and hips to create movement.
-        2. Swing arm back and forth like a pendulum then use your hips to make circles
-        3. Do this exercise for 5 minutes 4 times a day.
-        4. As pain decreases, try bending over further.
+        1. Face a wall about 12 inches away w/ hands at shoulder height
+        2. Bend elbows, bring face to the wall with back & hips straight 
+        3. Push back to where you started
+        4. Repeat 8-12 times 3 times a day
     """.trimIndent()
 
     Text(

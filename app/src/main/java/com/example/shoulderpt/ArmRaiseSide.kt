@@ -1,7 +1,9 @@
 package com.example.shoulderpt
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,11 +29,8 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.shoulderpt.BackToExerciseListButton
-import com.example.shoulderpt.ExerciseViewModel
-import com.example.shoulderpt.PendulumSwing
-import com.example.shoulderpt.R
-import com.example.shoulderpt.RadioButtonsSection
+import com.example.shoulderpt.ui.theme.ShoulderPTTheme
+
 @Composable
 fun ImageSectionArmRaiseSide() {
     Image(
@@ -132,8 +132,16 @@ fun ArmRaiseSide(navController: NavController, viewModel: ExerciseViewModel = vi
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreviewArmRaiseSide() {
+    // Mock NavController for preview purposes
     val navController = rememberNavController()
-    ArmRaiseSide(navController)
+    ShoulderPTTheme {
+        Box(modifier = Modifier.fillMaxSize().background(Color.LightGray)) { // Add a background
+            ArmRaiseSide(navController)
+        }
+
+        ArmRaiseSide(navController = navController)
+    }
 }
+
 
 
